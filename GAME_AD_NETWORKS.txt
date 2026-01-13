@@ -1,0 +1,101 @@
+GAME MONETIZATION & ADVERTISING PARTNERS DIRECTORY
+==================================================
+A curated list of ad networks, agencies, and platforms for monetizing your game.
+
+1. WEB & HTML5 GAME AD NETWORKS (Best for React/Web Games)
+----------------------------------------------------------
+These networks specialize in browser-based games and offer easy integration.
+
+- Google AdSense for Games (H5 Games Ads)
+  Website: https://adsense.google.com/start/solutions/h5-games-ads/
+  Best For: High fill rates, reliable payments, global reach.
+
+- GameDistribution
+  Website: https://gamedistribution.com/
+  Best For: Publishing your game to thousands of portals. They handle ads.
+
+- CrazyGames (Developer Portal)
+  Website: https://developer.crazygames.com/
+  Best For: Uploading your game directly to their platform to earn revenue share.
+
+- AdinPlay
+  Website: https://adinplay.com/
+  Best For: High-quality ads for .io and HTML5 games.
+
+- Poki for Developers
+  Website: https://developers.poki.com/
+  Best For: Premium web game publishing and monetization.
+
+2. MOBILE AD NETWORKS (If you wrap your game for iOS/Android)
+-------------------------------------------------------------
+These require your game to be a native app (using Capacitor/Cordova/React Native).
+
+- Google AdMob
+  Website: https://admob.google.com/
+  Best For: The industry standard for mobile game ads (Banners, Interstitials, Rewarded).
+
+- Unity Ads
+  Website: https://unity.com/solutions/unity-ads
+  Best For: High CPMs for gaming audiences, especially Rewarded Video.
+
+- AppLovin
+  Website: https://www.applovin.com/
+  Best For: User acquisition and monetization growth.
+
+- ironSource (from Unity)
+  Website: https://www.is.com/
+  Best For: Mediation and maximizing revenue from multiple networks.
+
+- Vungle (Liftoff)
+  Website: https://liftoff.io/
+  Best For: Creative video ads and playable ads.
+
+3. IN-GAME & NATIVE ADVERTISING (Non-Intrusive)
+-----------------------------------------------
+These platforms place ads *inside* the game world (e.g., on billboards) or as audio.
+
+- Anzu.io
+  Website: https://www.anzu.io/
+  Best For: Blended in-game ads that don't interrupt gameplay.
+
+- AudioMob
+  Website: https://audiomob.com/
+  Best For: Audio ads that play while the user keeps playing.
+
+- Gadsme
+  Website: https://www.gadsme.com/
+  Best For: Immersive in-game video and display ads.
+
+4. PUBLISHERS & AGENCIES (They market your game for a split)
+------------------------------------------------------------
+Submit your game to these companies; if they like it, they handle marketing and ads.
+
+- Voodoo
+  Website: https://www.voodoo.io/publishing/
+  Focus: Hyper-casual mobile games.
+
+- Ketchapp (Ubisoft)
+  Website: http://www.ketchappgames.com/
+  Focus: Simple, addictive arcade games.
+
+- Lion Studios
+  Website: https://lionstudios.cc/
+  Focus: Mobile puzzle and casual games.
+
+- Kwalee
+  Website: https://www.kwalee.com/
+  Focus: Hyper-casual, Hybrid-casual.
+
+5. MEDIATION PLATFORMS (Manage multiple ad networks)
+----------------------------------------------------
+Use these to compete ad networks against each other for the highest price.
+
+- AppLovin MAX
+- Unity LevelPlay
+- Google AdMob Mediation
+
+-----------------------------------------------------------------------
+NEXT STEPS:
+1. For your current Web/React version, start with **GameDistribution** or **AdinPlay**.
+2. If you build a mobile version, integrate **AdMob** or **Unity Ads**.
+3. Create a "Press Kit" (Screenshots, Trailer, Description) before contacting publishers.

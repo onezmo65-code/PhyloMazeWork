@@ -1,0 +1,711 @@
+[
+  {
+    "id": "img_stop",
+    "text": "What does this sign mean?",
+    "options": ["Stop", "Go", "Yield"],
+    "answer": "Stop",
+    "type": "image",
+    "category": "General",
+    "image": "/images/questions/stop-sign.png"
+  },
+  {
+    "id": "img_propane",
+    "text": "What safety precaution is most important when handling propane tanks?",
+    "options": ["Keep away from heat", "Store in sunlight", "Shake vigorously"],
+    "answer": "Keep away from heat",
+    "type": "image",
+    "category": "General",
+    "image": "/images/questions/propane-tank.png"
+  },
+  {
+    "id": "img_wrench",
+    "text": "What is this tool commonly used for?",
+    "options": ["Tightening bolts", "Cutting wood", "Painting walls"],
+    "answer": "Tightening bolts",
+    "type": "image",
+    "category": "General",
+    "image": "/images/questions/wrench.png"
+  },
+  {
+    "id": "img_elephant",
+    "text": "What is the largest land animal on Earth?",
+    "options": ["Elephant", "Giraffe", "Rhinoceros"],
+    "answer": "Elephant",
+    "type": "image",
+    "category": "Science",
+    "image": "/images/questions/elephant.jpg"
+  },
+  {
+    "id": "img_octagon",
+    "text": "What shape is this?",
+    "options": ["Octagon", "Hexagon", "Pentagon"],
+    "answer": "Octagon",
+    "type": "image",
+    "category": "General",
+    "image": "/images/questions/octagon.png"
+  },
+  {
+    "id": "geo_ocean",
+    "text": "Largest ocean?",
+    "options": ["Pacific", "Atlantic", "Indian"],
+    "answer": "Pacific",
+    "type": "choice",
+    "category": "Geography"
+  },
+  {
+    "id": "geo_mountain",
+    "text": "Tallest mountain?",
+    "options": ["Everest", "Kilimanjaro", "Denali"],
+    "answer": "Everest",
+    "type": "choice",
+    "category": "Geography"
+  },
+  {
+    "id": "geo_france",
+    "text": "Capital of France?",
+    "options": ["Paris", "Rome"],
+    "answer": "Paris",
+    "type": "choice",
+    "category": "Geography"
+  },
+  {
+    "id": "geo_africa",
+    "text": "Africa is a continent.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "Geography"
+  },
+  {
+    "id": "geo_river",
+    "text": "Longest river?",
+    "options": ["Nile", "Amazon", "Mississippi"],
+    "answer": "Nile",
+    "type": "choice",
+    "category": "Geography"
+  },
+  {
+    "id": "geo_sahara",
+    "text": "Desert in Africa?",
+    "options": ["Sahara", "Gobi"],
+    "answer": "Sahara",
+    "type": "choice",
+    "category": "Geography"
+  },
+  {
+    "id": "geo_state",
+    "text": "Smallest US state?",
+    "options": ["Rhode Island", "Delaware"],
+    "answer": "Rhode Island",
+    "type": "choice",
+    "category": "Geography"
+  },
+  {
+    "id": "geo_equator",
+    "text": "The equator is imaginary.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "Geography"
+  },
+  {
+    "id": "geo_country",
+    "text": "Largest country?",
+    "options": ["Russia", "Canada", "China"],
+    "answer": "Russia",
+    "type": "choice",
+    "category": "Geography"
+  },
+  {
+    "id": "geo_japan",
+    "text": "Currency of Japan?",
+    "options": ["Yen", "Dollar", "Won"],
+    "answer": "Yen",
+    "type": "choice",
+    "category": "Geography"
+  },
+  {
+    "id": "sci_sun",
+    "text": "Closest planet to Sun?",
+    "options": ["Mercury", "Venus"],
+    "answer": "Mercury",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "sci_mars",
+    "text": "Red planet?",
+    "options": ["Mars", "Jupiter"],
+    "answer": "Mars",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "sci_moon",
+    "text": "Earth has one moon.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "Science"
+  },
+  {
+    "id": "sci_gas",
+    "text": "Gas giant?",
+    "options": ["Saturn", "Mars"],
+    "answer": "Saturn",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "sci_ring",
+    "text": "Ringed planet?",
+    "options": ["Saturn", "Neptune"],
+    "answer": "Saturn",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "sci_jupiter",
+    "text": "Largest planet?",
+    "options": ["Jupiter", "Saturn"],
+    "answer": "Jupiter",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "sci_pluto",
+    "text": "Pluto is a dwarf planet.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "Science"
+  },
+  {
+    "id": "sci_star",
+    "text": "Sun is a star?",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "Science"
+  },
+  {
+    "id": "sci_light",
+    "text": "Speed of light unit?",
+    "options": ["km/s", "mph"],
+    "answer": "km/s",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "sci_boil",
+    "text": "Water boils at?",
+    "options": ["100°C", "212°F"],
+    "answer": "100°C",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "soc_bullying",
+    "text": "Bullying is harmful.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "Social"
+  },
+  {
+    "id": "soc_help",
+    "text": "Helping others shows?",
+    "options": ["Kindness", "Anger"],
+    "answer": "Kindness",
+    "type": "choice",
+    "category": "Social"
+  },
+  {
+    "id": "soc_share",
+    "text": "Sharing builds friendship.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "Social"
+  },
+  {
+    "id": "soc_crime",
+    "text": "Crime prevention needs?",
+    "options": ["Good laws", "Violence"],
+    "answer": "Good laws",
+    "type": "choice",
+    "category": "Social"
+  },
+  {
+    "id": "soc_respect",
+    "text": "Respect means listening.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "Social"
+  },
+  {
+    "id": "soc_motivation",
+    "text": "Motivation helps?",
+    "options": ["Success", "Failure"],
+    "answer": "Success",
+    "type": "choice",
+    "category": "Social"
+  },
+  {
+    "id": "soc_stealing",
+    "text": "Stealing is wrong.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "Social"
+  },
+  {
+    "id": "soc_gov",
+    "text": "Good governance means?",
+    "options": ["Planning", "Fighting"],
+    "answer": "Planning",
+    "type": "choice",
+    "category": "Social"
+  },
+  {
+    "id": "soc_honesty",
+    "text": "Honesty builds trust.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "Social"
+  },
+  {
+    "id": "soc_team",
+    "text": "Teamwork shows?",
+    "options": ["Cooperation", "Laziness"],
+    "answer": "Cooperation",
+    "type": "choice",
+    "category": "Social"
+  },
+  {
+    "id": "fun_car",
+    "text": "First car inventor?",
+    "options": ["Ford", "Benz"],
+    "answer": "Benz",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "fun_boat",
+    "text": "Boats float on water.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "General"
+  },
+  {
+    "id": "fun_fridge",
+    "text": "Refrigerator keeps food?",
+    "options": ["Cold", "Hot"],
+    "answer": "Cold",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "fun_plane",
+    "text": "Airplanes fly with wings.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "General"
+  },
+  {
+    "id": "fun_fish",
+    "text": "Fishing tool?",
+    "options": ["Rod", "Hammer"],
+    "answer": "Rod",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "fun_fuel",
+    "text": "Cars need fuel.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "General"
+  },
+  {
+    "id": "fun_micro",
+    "text": "Microwave cooks with?",
+    "options": ["Heat", "Radiation"],
+    "answer": "Radiation",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "fun_tire",
+    "text": "Tires are round.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "General"
+  },
+  {
+    "id": "fun_hunt",
+    "text": "Hunting tool?",
+    "options": ["Bow", "Spoon"],
+    "answer": "Bow",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "fun_sail",
+    "text": "Boats use sails.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "General"
+  },
+  {
+    "id": "vac_sun",
+    "text": "Sunscreen prevents?",
+    "options": ["Sunburn", "Cold"],
+    "answer": "Sunburn",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "vac_exercise",
+    "text": "Exercise is healthy.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "General"
+  },
+  {
+    "id": "vac_spot",
+    "text": "Vacation spot?",
+    "options": ["Beach", "Factory"],
+    "answer": "Beach",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "vac_water",
+    "text": "Drinking water is safe.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "General"
+  },
+  {
+    "id": "vac_fruit",
+    "text": "Fruits give?",
+    "options": ["Vitamins", "Pollution"],
+    "answer": "Vitamins",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "vac_smoke",
+    "text": "Smoking harms lungs.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "General"
+  },
+  {
+    "id": "vac_seatbelt",
+    "text": "Seatbelt use?",
+    "options": ["Safety", "Danger"],
+    "answer": "Safety",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "vac_sleep",
+    "text": "Sleep restores energy.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "General"
+  },
+  {
+    "id": "vac_wash",
+    "text": "Handwashing prevents?",
+    "options": ["Disease", "Dirt"],
+    "answer": "Disease",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "vac_swim",
+    "text": "Swimming is exercise.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "General"
+  },
+  {
+    "id": "unit_kg",
+    "text": "1 kg = ?",
+    "options": ["2.2 lb", "10 lb"],
+    "answer": "2.2 lb",
+    "type": "choice",
+    "category": "Math"
+  },
+  {
+    "id": "unit_freeze",
+    "text": "Water freezes at?",
+    "options": ["0°C", "32°F"],
+    "answer": "0°C",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "unit_mile",
+    "text": "Mile is longer than kilometer.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "Math"
+  },
+  {
+    "id": "unit_gas",
+    "text": "Gasoline sold in?",
+    "options": ["Liters", "Gallons"],
+    "answer": "Liters",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "unit_pound",
+    "text": "Pound is weight.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "Math"
+  },
+  {
+    "id": "unit_temp",
+    "text": "Temperature unit?",
+    "options": ["Celsius", "Fahrenheit"],
+    "answer": "Celsius",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "unit_meter",
+    "text": "Meter measures length.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "Math"
+  },
+  {
+    "id": "unit_speed",
+    "text": "Speed unit?",
+    "options": ["km/h", "mph"],
+    "answer": "km/h",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "unit_liter",
+    "text": "Liter measures volume.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "Math"
+  },
+  {
+    "id": "unit_mass",
+    "text": "Kilogram measures mass.",
+    "options": ["True", "False"],
+    "answer": "True",
+    "type": "boolean",
+    "category": "Math"
+  },
+  {
+    "id": "soc_curse",
+    "text": "Have you ever cursed in front of a teacher?",
+    "options": ["No", "Yes"],
+    "answer": "No",
+    "type": "boolean",
+    "category": "Social"
+  },
+  {
+    "id": "soc_bully",
+    "text": "Should you report bullying?",
+    "options": ["Yes", "No"],
+    "answer": "Yes",
+    "type": "boolean",
+    "category": "Social"
+  },
+  {
+    "id": "soc_litter",
+    "text": "Is littering okay?",
+    "options": ["No", "Yes"],
+    "answer": "No",
+    "type": "boolean",
+    "category": "Social"
+  },
+  {
+    "id": "fun_color_sky",
+    "text": "Color of sky on sunny day?",
+    "options": ["Blue", "Green"],
+    "answer": "Blue",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "fun_fruit_yellow",
+    "text": "Yellow curved fruit?",
+    "options": ["Banana", "Apple"],
+    "answer": "Banana",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "fun_animal_meow",
+    "text": "Animal that meows?",
+    "options": ["Cat", "Dog"],
+    "answer": "Cat",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "fun_hero_web",
+    "text": "Hero shoots webs?",
+    "options": ["Spider-Man", "Batman"],
+    "answer": "Spider-Man",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "fun_disney_mouse",
+    "text": "Mickey is a?",
+    "options": ["Mouse", "Duck"],
+    "answer": "Mouse",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "fun_sport_bat",
+    "text": "Sport with bat and ball?",
+    "options": ["Baseball", "Soccer"],
+    "answer": "Baseball",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "fun_school_bus",
+    "text": "Color of school bus?",
+    "options": ["Yellow", "Red"],
+    "answer": "Yellow",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "fun_nemo",
+    "text": "Nemo is a?",
+    "options": ["Fish", "Bird"],
+    "answer": "Fish",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "fun_shrek",
+    "text": "Shrek is an?",
+    "options": ["Ogre", "Elf"],
+    "answer": "Ogre",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "fun_harry",
+    "text": "Harry Potter is a?",
+    "options": ["Wizard", "Muggle"],
+    "answer": "Wizard",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "sci_bones",
+    "text": "Adult human bones?",
+    "options": ["206", "100"],
+    "answer": "206",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "sci_skin",
+    "text": "Largest organ?",
+    "options": ["Skin", "Heart"],
+    "answer": "Skin",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "sci_gas",
+    "text": "We breathe in?",
+    "options": ["Oxygen", "Helium"],
+    "answer": "Oxygen",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "sci_planet_red",
+    "text": "Red Planet?",
+    "options": ["Mars", "Venus"],
+    "answer": "Mars",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "sci_light",
+    "text": "Fastest thing?",
+    "options": ["Light", "Sound"],
+    "answer": "Light",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "geo_uk",
+    "text": "Capital of UK?",
+    "options": ["London", "Paris"],
+    "answer": "London",
+    "type": "choice",
+    "category": "Geography"
+  },
+  {
+    "id": "geo_china",
+    "text": "Capital of China?",
+    "options": ["Beijing", "Tokyo"],
+    "answer": "Beijing",
+    "type": "choice",
+    "category": "Geography"
+  },
+  {
+    "id": "geo_desert",
+    "text": "Largest hot desert?",
+    "options": ["Sahara", "Gobi"],
+    "answer": "Sahara",
+    "type": "choice",
+    "category": "Geography"
+  },
+  {
+    "id": "math_half",
+    "text": "0.5 as percentage?",
+    "options": ["50%", "5%"],
+    "answer": "50%",
+    "type": "choice",
+    "category": "Math"
+  },
+  {
+    "id": "math_angle",
+    "text": "Right angle degrees?",
+    "options": ["90", "180"],
+    "answer": "90",
+    "type": "choice",
+    "category": "Math"
+  }
+]

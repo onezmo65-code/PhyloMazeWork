@@ -1,0 +1,133 @@
+========================================
+CRAZYGAMES UPLOAD PACKAGE - NEBULA MAZE
+========================================
+
+FOLDER TO UPLOAD: dist_clean/
+Total Size: 2.9 MB
+Total Files: 21
+
+----------------------------------------
+REQUIRED FILES (Upload ALL of these)
+----------------------------------------
+
+ROOT FILES:
+  ✓ index.html          - Main entry point
+  ✓ vite.svg            - Favicon
+  ✓ yw_manifest.json    - App manifest
+  ✓ questions.json      - Game questions
+
+ASSETS FOLDER (assets/):
+  JavaScript:
+  ✓ index-BCIem6fb.js          (314 KB) - Main game code
+  ✓ web-CrlQpssq.js            (105 KB) - Web utilities
+  ✓ web-DaqKpuF4.js            (35 KB)  - Additional code
+  ✓ web-IZJghlh1.js            (9 KB)   - Helpers
+  ✓ web-D3qZ4Qii.js            (2 KB)   - Components
+
+  Source Maps (for debugging):
+  ✓ index-BCIem6fb.js.map
+  ✓ web-CrlQpssq.js.map
+  ✓ web-DaqKpuF4.js.map
+  ✓ web-IZJghlh1.js.map
+  ✓ web-D3qZ4Qii.js.map
+
+  Styles:
+  ✓ index-hrA5FbuL.css         (34 KB)  - Main stylesheet
+
+  Images:
+  ✓ stop_sign.png               - Game asset
+
+IMAGES FOLDER (images/questions/):
+  ✓ elephant.jpg
+  ✓ octagon.png
+  ✓ wrench.png
+  ✓ README.md
+  ✓ .gitkeep
+
+----------------------------------------
+UPLOAD STEPS
+----------------------------------------
+
+1. Go to CrazyGames Developer Portal
+   https://developer.crazygames.com/
+
+2. Navigate to your game: "Nebula Maze"
+
+3. Click "Upload New Build"
+
+4. Upload Method (Choose ONE):
+
+   OPTION A - Zip Upload (Recommended):
+   - Compress the "dist_clean" folder
+   - Upload the .zip file
+   - Set entry point: index.html
+
+   OPTION B - Folder Upload:
+   - Upload entire "dist_clean" folder
+   - Maintain folder structure
+   - Set entry point: index.html
+
+5. Configure Build Settings:
+   - Entry Point: index.html
+   - SDK Version: v3 (already integrated)
+   - Orientation: Landscape/Portrait (both supported)
+
+6. Test the build in CrazyGames preview
+
+7. Submit for review
+
+----------------------------------------
+CRAZYGAMES CONFIGURATION
+----------------------------------------
+
+Game ID: nebula-maze
+Entry Point: index.html
+Framework: React 18.3 + Vite 7.0
+SDK: CrazyGames SDK v3 (integrated)
+
+Features:
+✓ CrazyGames SDK initialized
+✓ Ad integration (rewarded ads)
+✓ Responsive design
+✓ Mobile + Desktop support
+✓ Touch controls for mobile
+✓ Keyboard controls for desktop
+
+----------------------------------------
+DO NOT UPLOAD (Development files)
+----------------------------------------
+
+❌ AndroidVariablesFix.zip
+❌ BuildFixes.zip
+❌ CapacitorSetup.zip
+❌ CordovaPluginsFix.zip
+❌ MobileUpdate.zip
+❌ NearFinalMazeGame.zip
+❌ NebulaMaze_FirebaseIntegrated.zip
+
+These are development backups, NOT game files!
+
+----------------------------------------
+VERIFICATION
+----------------------------------------
+
+After upload, verify:
+□ Game loads correctly
+□ CrazyGames SDK initializes
+□ Ads show properly (test rewarded ads)
+□ Touch controls work on mobile preview
+□ Keyboard controls work on desktop
+□ All images load correctly
+□ No console errors
+□ Game is playable end-to-end
+
+----------------------------------------
+SUPPORT
+----------------------------------------
+
+CrazyGames Docs: https://docs.crazygames.com/
+SDK Reference: https://docs.crazygames.com/sdk/intro/
+Developer Portal: https://developer.crazygames.com/
+
+Build Date: January 11, 2026
+Build Tool: Vite 7.3.0

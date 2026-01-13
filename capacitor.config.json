@@ -1,0 +1,6 @@
+{
+  "appId": "com.onesmo.nebulamaze",
+  "appName": "Nebula Maze App",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

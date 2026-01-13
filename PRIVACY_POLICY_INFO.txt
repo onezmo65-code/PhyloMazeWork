@@ -1,0 +1,158 @@
+========================================
+PRIVACY POLICY - NEBULA MAZE
+========================================
+
+Created: January 11, 2026
+Status: ✅ READY FOR GOOGLE PLAY & WEB
+
+========================================
+PRIVACY POLICY LOCATIONS
+========================================
+
+1. SOURCE FILE:
+   c:\Projects\PhyloMazeWork\public\privacy-policy.html
+
+2. BUILT FILE (for deployment):
+   c:\Projects\PhyloMazeWork\dist\privacy-policy.html
+
+3. WEB URL (after deployment):
+   You need to host this file and use the URL in Google Play
+
+========================================
+HOSTING OPTIONS
+========================================
+
+OPTION 1: Firebase Hosting (Recommended)
+   1. Deploy to Firebase:
+      cd c:\Projects\PhyloMazeWork
+      firebase deploy --only hosting
+
+   2. Your privacy policy URL will be:
+      https://nebula-maze.web.app/privacy-policy.html
+      OR
+      https://nebula-maze.firebaseapp.com/privacy-policy.html
+
+OPTION 2: GitHub Pages
+   1. Create a repository for your privacy policy
+   2. Upload privacy-policy.html
+   3. Enable GitHub Pages
+   4. URL: https://yourusername.github.io/repo-name/privacy-policy.html
+
+OPTION 3: Your Own Domain
+   Upload to your website:
+   https://yourdomain.com/nebula-maze/privacy-policy.html
+
+========================================
+FOR GOOGLE PLAY CONSOLE
+========================================
+
+1. Go to: Google Play Console
+   https://play.google.com/console
+
+2. Navigate to:
+   App content > Privacy Policy
+
+3. Enter your privacy policy URL:
+   https://nebula-maze.web.app/privacy-policy.html
+   (after deploying to Firebase)
+
+4. Click "Save"
+
+========================================
+FOR CRAZYGAMES
+========================================
+
+CrazyGames also requires a privacy policy link.
+Add this to your game settings in the CrazyGames Developer Portal.
+
+========================================
+WHAT'S INCLUDED IN THE POLICY
+========================================
+
+✅ Information Collection (data collected)
+✅ How We Use Information
+✅ Third-Party Services:
+   - Firebase (Analytics, Auth, Storage)
+   - Google AdMob (Advertising)
+   - RevenueCat (In-app purchases)
+   - CrazyGames (Web hosting)
+✅ Data Storage and Security
+✅ Children's Privacy (COPPA compliance)
+✅ User Rights and Choices
+✅ Advertising Opt-Out
+✅ Data Retention
+✅ International Data Transfers
+✅ CCPA (California Privacy Rights)
+✅ GDPR (European Privacy Rights)
+✅ Contact Information
+✅ Consent
+
+========================================
+COMPLIANCE
+========================================
+
+✅ COPPA (Children's Online Privacy Protection Act)
+✅ GDPR (General Data Protection Regulation - EU)
+✅ CCPA (California Consumer Privacy Act)
+✅ Google Play Store Requirements
+✅ App Store Requirements
+
+========================================
+YOUR CONTACT INFORMATION (in policy)
+========================================
+
+Developer: Onesmo
+Email: onezmo65@gmail.com
+Address: 2460 Dundee Road, Unit 413
+         Northbrook, Illinois 60065
+         United States
+Company: originatti, LLC
+D-U-N-S: 079744000
+
+========================================
+QUICK DEPLOY TO FIREBASE
+========================================
+
+1. Install Firebase CLI (if not installed):
+   npm install -g firebase-tools
+
+2. Login to Firebase:
+   firebase login
+
+3. Initialize Firebase (if not done):
+   firebase init hosting
+   - Select your project: nebula-maze
+   - Public directory: dist
+   - Configure as single-page app: Yes
+   - Set up automatic builds: No
+
+4. Deploy:
+   firebase deploy --only hosting
+
+5. Your privacy policy will be live at:
+   https://nebula-maze.web.app/privacy-policy.html
+
+6. Copy this URL to Google Play Console
+
+========================================
+MAINTAINING THE POLICY
+========================================
+
+- Update the "Last Updated" date when you make changes
+- Review annually or when you add new features
+- Notify users of significant changes via in-app message
+- Keep previous versions for record-keeping
+
+========================================
+NEXT STEPS
+========================================
+
+□ Deploy privacy-policy.html to Firebase Hosting
+□ Get the live URL
+□ Add URL to Google Play Console
+□ Add URL to App Store Connect (for iOS)
+□ Add URL to CrazyGames Developer Portal
+□ Test the URL to ensure it's accessible
+□ Add link to privacy policy in your app settings
+
+========================================

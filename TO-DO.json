@@ -1,0 +1,1 @@
+[{"id":"TASK-1","content":"Fix Android Build Environment (JAVA_HOME)","status":"completed","priority":"high"},{"id":"TASK-2","content":"Verify Firebase Integration (Upload Test)","status":"completed","priority":"high"},{"id":"TASK-3","content":"Generate Release Bundle","status":"completed","priority":"medium"}]

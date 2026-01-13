@@ -1,0 +1,65 @@
+========================================
+POWERSHELL COPY COMMAND FOR CRAZYGAMES
+========================================
+
+RUN FROM FOLDER: C:\Projects\PhyloMazeWork
+
+========================================
+METHOD 1: Using PowerShell Script (Recommended)
+========================================
+
+1. Open PowerShell in: C:\Projects\PhyloMazeWork
+
+2. Run:
+   .\copy-to-crazygames.ps1
+
+   (If you get execution policy error, run first:)
+   Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+
+========================================
+METHOD 2: Single PowerShell Command
+========================================
+
+Copy and paste this entire command into PowerShell:
+
+$dest = "C:\Projects\Game Maze\ClaudeCrazy"; New-Item -ItemType Directory -Path $dest -Force | Out-Null; Remove-Item -Path "$dest\*" -Recurse -Force -ErrorAction SilentlyContinue; Copy-Item -Path "dist\index.html","dist\vite.svg","dist\yw_manifest.json","dist\questions.json" -Destination $dest -Force; New-Item -ItemType Directory -Path "$dest\assets" -Force | Out-Null; Get-ChildItem "dist\assets" -File | Where-Object {$_.Extension -ne ".zip"} | Copy-Item -Destination "$dest\assets\" -Force; Copy-Item -Path "dist\images" -Destination $dest -Recurse -Force; Write-Host "Copy complete! Files in: $dest" -ForegroundColor Green
+
+========================================
+METHOD 3: Manual PowerShell Commands
+========================================
+
+Run these commands one by one in PowerShell:
+
+# Create destination folder
+New-Item -ItemType Directory -Path "C:\Projects\Game Maze\ClaudeCrazy" -Force
+
+# Clear destination (optional)
+Remove-Item -Path "C:\Projects\Game Maze\ClaudeCrazy\*" -Recurse -Force
+
+# Copy root files
+Copy-Item -Path "dist\index.html" -Destination "C:\Projects\Game Maze\ClaudeCrazy\" -Force
+Copy-Item -Path "dist\vite.svg" -Destination "C:\Projects\Game Maze\ClaudeCrazy\" -Force
+Copy-Item -Path "dist\yw_manifest.json" -Destination "C:\Projects\Game Maze\ClaudeCrazy\" -Force
+Copy-Item -Path "dist\questions.json" -Destination "C:\Projects\Game Maze\ClaudeCrazy\" -Force
+
+# Copy assets folder
+New-Item -ItemType Directory -Path "C:\Projects\Game Maze\ClaudeCrazy\assets" -Force
+Get-ChildItem "dist\assets" -File | Where-Object {$_.Extension -ne ".zip"} | Copy-Item -Destination "C:\Projects\Game Maze\ClaudeCrazy\assets\" -Force
+
+# Copy images folder
+Copy-Item -Path "dist\images" -Destination "C:\Projects\Game Maze\ClaudeCrazy\" -Recurse -Force
+
+# Done!
+Write-Host "Copy complete!" -ForegroundColor Green
+
+========================================
+VERIFICATION
+========================================
+
+After running, verify files copied:
+
+Get-ChildItem "C:\Projects\Game Maze\ClaudeCrazy" -Recurse -File | Measure-Object | Select-Object Count
+
+Expected: 21 files
+
+========================================

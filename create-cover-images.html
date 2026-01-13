@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula Maze - Cover Image Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #1a1a2e;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .canvas-container {
+            margin: 30px 0;
+            background: #2a2a4e;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        canvas {
+            border: 2px solid #4CAF50;
+            cursor: crosshair;
+            display: block;
+            margin: 10px 0;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+            padding: 10px;
+            background: #3a3a5e;
+            border: 1px solid #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+        .info {
+            background: #3a3a5e;
+            padding: 15px;
+            border-left: 4px solid #4CAF50;
+            margin: 10px 0;
+        }
+        .controls {
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            margin: 10px 0;
+            background: #3a3a5e;
+            border: 1px solid #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Nebula Maze - Cover Image Generator</h1>
+
+        <div class="info">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Upload a screenshot from your game</li>
+                <li>Customize the title text (optional)</li>
+                <li>Click "Generate" for each size</li>
+                <li>Right-click on the canvas and "Save image as..."</li>
+                <li>Upload to CrazyGames</li>
+            </ol>
+        </div>
+
+        <div class="controls">
+            <h3>Upload Screenshot:</h3>
+            <input type="file" id="imageUpload" accept="image/*">
+
+            <h3>Title Text:</h3>
+            <input type="text" id="titleText" value="NEBULA MAZE" placeholder="Enter title">
+            <input type="text" id="subtitleText" value="Educational Puzzle Adventure" placeholder="Enter subtitle">
+        </div>
+
+        <!-- Landscape 16:9 -->
+        <div class="canvas-container">
+            <h2>1. Landscape 16:9 (1920x1080)</h2>
+            <div class="info">Required for: Homepage, Category pages</div>
+            <button onclick="generateLandscape()">Generate Landscape Image</button>
+            <button onclick="downloadCanvas('landscape')">Download Landscape</button>
+            <br><br>
+            <canvas id="landscapeCanvas" width="1920" height="1080"></canvas>
+        </div>
+
+        <!-- Portrait 2:3 -->
+        <div class="canvas-container">
+            <h2>2. Portrait 2:3 (800x1200)</h2>
+            <div class="info">Required for: Mobile, Vertical displays</div>
+            <button onclick="generatePortrait()">Generate Portrait Image</button>
+            <button onclick="downloadCanvas('portrait')">Download Portrait</button>
+            <br><br>
+            <canvas id="portraitCanvas" width="800" height="1200"></canvas>
+        </div>
+
+        <!-- Square 1:1 (for reference) -->
+        <div class="canvas-container">
+            <h2>3. Square 1:1 (800x800) ✅ Already Uploaded</h2>
+            <div class="info">This size is already uploaded to CrazyGames</div>
+        </div>
+    </div>
+
+    <script>
+        let uploadedImage = null;
+
+        document.getElementById('imageUpload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const img = new Image();
+                    img.onload = function() {
+                        uploadedImage = img;
+                        alert('Image loaded! Now click "Generate" buttons to create cover images.');
+                    };
+                    img.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function generateLandscape() {
+            if (!uploadedImage) {
+                alert('Please upload an image first!');
+                return;
+            }
+
+            const canvas = document.getElementById('landscapeCanvas');
+            const ctx = canvas.getContext('2d');
+            const title = document.getElementById('titleText').value;
+            const subtitle = document.getElementById('subtitleText').value;
+
+            // Clear canvas
+            ctx.fillStyle = '#1a1a2e';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw image (cover entire canvas)
+            ctx.drawImage(uploadedImage, 0, 0, canvas.width, canvas.height);
+
+            // Add dark overlay for better text visibility
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+            ctx.fillRect(0, 0, canvas.width, 200);
+            ctx.fillRect(0, canvas.height - 150, canvas.width, 150);
+
+            // Draw title
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 120px Arial';
+            ctx.textAlign = 'center';
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+            ctx.shadowBlur = 20;
+            ctx.fillText(title, canvas.width / 2, 150);
+
+            // Draw subtitle
+            ctx.font = '48px Arial';
+            ctx.fillText(subtitle, canvas.width / 2, canvas.height - 60);
+
+            ctx.shadowBlur = 0;
+        }
+
+        function generatePortrait() {
+            if (!uploadedImage) {
+                alert('Please upload an image first!');
+                return;
+            }
+
+            const canvas = document.getElementById('portraitCanvas');
+            const ctx = canvas.getContext('2d');
+            const title = document.getElementById('titleText').value;
+            const subtitle = document.getElementById('subtitleText').value;
+
+            // Clear canvas
+            ctx.fillStyle = '#1a1a2e';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw image (cover entire canvas)
+            ctx.drawImage(uploadedImage, 0, 0, canvas.width, canvas.height);
+
+            // Add dark overlays
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+            ctx.fillRect(0, 0, canvas.width, 200);
+            ctx.fillRect(0, canvas.height - 200, canvas.width, 200);
+
+            // Draw title
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 64px Arial';
+            ctx.textAlign = 'center';
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+            ctx.shadowBlur = 15;
+            ctx.fillText(title, canvas.width / 2, 120);
+
+            // Draw subtitle (split into multiple lines if needed)
+            ctx.font = '32px Arial';
+            const words = subtitle.split(' ');
+            let line = '';
+            let y = canvas.height - 120;
+
+            for (let word of words) {
+                const testLine = line + word + ' ';
+                const metrics = ctx.measureText(testLine);
+                if (metrics.width > canvas.width - 40 && line !== '') {
+                    ctx.fillText(line, canvas.width / 2, y);
+                    line = word + ' ';
+                    y += 40;
+                } else {
+                    line = testLine;
+                }
+            }
+            ctx.fillText(line, canvas.width / 2, y);
+
+            ctx.shadowBlur = 0;
+        }
+
+        function downloadCanvas(type) {
+            const canvas = type === 'landscape'
+                ? document.getElementById('landscapeCanvas')
+                : document.getElementById('portraitCanvas');
+
+            const link = document.createElement('a');
+            link.download = `nebula-maze-${type}-cover.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+    </script>
+</body>
+</html>

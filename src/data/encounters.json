@@ -1,0 +1,246 @@
+[
+  {
+    "id": "forest_fire",
+    "name": "Forest Fire",
+    "type": "hazard",
+    "base_points": -20,
+    "remedies": {
+      "water": 0,
+      "ice_cube": -5,
+      "co2": -10,
+      "health": 10
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "snake_bite",
+    "name": "Snake Bite",
+    "type": "hazard",
+    "base_points": -15,
+    "remedies": {
+      "weapon": -5,
+      "antivenom": 0,
+      "bandage": -10,
+      "health": 10
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "robber",
+    "name": "Robber with Knife",
+    "type": "hazard",
+    "base_points": -20,
+    "remedies": {
+      "weapon": -10,
+      "health": 10
+    },
+    "priority_rule": "lowest_loss_applies",
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "bee_sting",
+    "name": "Bee Sting",
+    "type": "hazard",
+    "base_points": -10,
+    "remedies": {
+      "herb": -5,
+      "honey": -5,
+      "health": 10
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "quicksand",
+    "name": "Quicksand",
+    "type": "hazard",
+    "base_points": -20,
+    "remedies": {
+      "rope": -10,
+      "stick": -10,
+      "teamwork": 0,
+      "health": 10
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "meteor_storm",
+    "name": "Meteor Storm",
+    "type": "hazard",
+    "base_points": -20,
+    "remedies": {
+      "shield_generator": 0,
+      "evasive_maneuver": -10,
+      "life_jacket": 0
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "violent_alien",
+    "name": "Violent Alien",
+    "type": "hazard",
+    "base_points": -25,
+    "remedies": {
+      "weapon": -10,
+      "negotiation_item": 0,
+      "health": 10,
+      "teamwork": 0,
+      "treaty": 0
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "solar_flare",
+    "name": "Solar Flare",
+    "type": "hazard",
+    "base_points": -20,
+    "remedies": {
+      "radiation_shield": 0,
+      "oxygen_tank": -10
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "toxic_fumes",
+    "name": "Toxic Fumes",
+    "type": "hazard",
+    "base_points": -20,
+    "remedies": {
+      "oxygen_mask": 0,
+      "health": -5,
+      "herb": -10,
+      "root": -10,
+      "honey": -15
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "hostile_wildlife",
+    "name": "Hostile Wildlife",
+    "type": "hazard",
+    "base_points": -15,
+    "remedies": {
+      "weapon": -5,
+      "trap": -10,
+      "health": -5
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "earthquake",
+    "name": "Earthquake",
+    "type": "hazard",
+    "base_points": -20,
+    "remedies": {
+      "shelter": 0,
+      "rope": -10,
+      "teamwork": -5
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "dog_bite",
+    "name": "Dog Bite",
+    "type": "hazard",
+    "base_points": -10,
+    "remedies": {
+      "bandage": -5,
+      "health": -5,
+      "pharmacy_pack": 0
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "leopard_attack",
+    "name": "Leopard/Lion/Fox Attack",
+    "type": "hazard",
+    "base_points": -20,
+    "remedies": {
+      "weapon": -10,
+      "health": -5,
+      "honey": -5
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "gorilla_attack",
+    "name": "Gorilla Attack",
+    "type": "hazard",
+    "base_points": -25,
+    "remedies": {
+      "health_berries": -5,
+      "herb": -10,
+      "root": -10,
+      "flower_pollen": -15,
+      "honey": -15
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "sunburn",
+    "name": "Sunburn",
+    "type": "hazard",
+    "base_points": -10,
+    "remedies": {
+      "sunscreen": 0,
+      "water": -5
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "storm",
+    "name": "Storm",
+    "type": "hazard",
+    "base_points": -20,
+    "remedies": {
+      "life_jacket": 0,
+      "rope": -10,
+      "oxygen_tank": -10
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "gas_leak",
+    "name": "Gas Leak",
+    "type": "hazard",
+    "base_points": -20,
+    "remedies": {
+      "oxygen_mask": 0,
+      "ventilation": -10,
+      "health": -5
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "falling_ice",
+    "name": "Falling Ice",
+    "type": "hazard",
+    "base_points": -10,
+    "remedies": {
+      "helmet": -5,
+      "shield": 0
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "pothole",
+    "name": "Pothole",
+    "type": "hazard",
+    "base_points": -10,
+    "remedies": {
+      "money": -5,
+      "health": -5
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  },
+  {
+    "id": "fast_car",
+    "name": "Fast Car",
+    "type": "hazard",
+    "base_points": -15,
+    "remedies": {
+      "reflex_boost": -5,
+      "dodge": 0
+    },
+    "invalid_choice_rule": "apply_full_loss_and_consume_item"
+  }
+]

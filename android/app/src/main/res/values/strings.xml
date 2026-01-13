@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Nebula Maze App</string>
+    <string name="title_activity_main">Nebula Maze App</string>
+    <string name="package_name">com.onesmo.nebulamaze</string>
+    <string name="custom_url_scheme">com.onesmo.nebulamaze</string>
+</resources>

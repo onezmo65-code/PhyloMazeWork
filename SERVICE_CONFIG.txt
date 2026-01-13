@@ -1,0 +1,54 @@
+PROJECT SERVICE CONFIGURATION & ACCOUNTS SHEET
+==============================================
+Use this document to track the external services and API keys required 
+to launch and operate your Nebula Maze application.
+
+1. GOOGLE AI STUDIO (Required for AI Features)
+----------------------------------------------
+- Service: Google Gemini API
+- Purpose: Generates dynamic trivia questions and maze themes.
+- Website: https://aistudio.google.com/
+- Account: Google Account
+- API Key Variable: VITE_API_KEY
+- Status: [ ] Key Generated
+- Your API Key: _______________________________________________________
+
+2. HOSTING PROVIDER (Required for Public Access)
+------------------------------------------------
+- Recommended: Vercel or Netlify
+- Purpose: Hosts the game on the internet.
+- Website: https://vercel.com or https://netlify.com
+- Account: GitHub/Email
+- Project Name: nebula-maze
+- Production URL: _____________________________________________________
+
+3. MONETIZATION / PAYMENTS (Optional - Currently Mocked)
+--------------------------------------------------------
+- Service: Stripe, PayPal, or RevenueCat
+- Purpose: Process payments for "Premium" unlock.
+- Current Implementation: The game uses a "Mock" paywall for demonstration.
+- To Go Live: You must replace the logic in `src/components/Paywall.tsx` with a real payment SDK.
+- Payment Gateway URL: ________________________________________________
+- Public Key: _________________________________________________________
+- Secret Key: _________________________________________________________
+
+4. DATABASE / AUTHENTICATION (Optional - Currently Local)
+---------------------------------------------------------
+- Service: Firebase, Supabase, or PlayFab
+- Purpose: Save player progress and leaderboards to the cloud.
+- Current Implementation: `localStorage` (Saves to user's device only).
+- To Go Live: Integrate Firebase SDK if you want cross-device syncing.
+- Project ID: _________________________________________________________
+- API Key: ____________________________________________________________
+
+5. ANALYTICS (Optional)
+-----------------------
+- Service: Google Analytics or Plausible
+- Purpose: Track player numbers and retention.
+- Tracking ID: ________________________________________________________
+
+-----------------------------------------------------------------------
+NOTES FOR DEPLOYMENT:
+- When deploying to Vercel/Netlify, ensure you add `VITE_API_KEY` to the 
+  "Environment Variables" section of your project settings.
+- DO NOT commit real API keys to public GitHub repositories.
