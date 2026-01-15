@@ -1,0 +1,260 @@
+{
+  "title": "Social Studies Questions",
+  "description": "Aligned with NCSS (National Council for the Social Studies) Standards and State Standards",
+  "standards": [
+    "NCSS Theme 3 - People, Places, and Environments (Geography)",
+    "NCSS Theme 5 - Individuals, Groups, and Institutions",
+    "NCSS Theme 7 - Production, Distribution, and Consumption (Economics)",
+    "NCSS Theme 10 - Civic Ideals and Practices",
+    "Historical Thinking - Cause and Effect"
+  ],
+  "questions": [
+    {
+      "id": "ss_001",
+      "standard": "NCSS Theme 3 - Geography",
+      "grade": 6,
+      "difficulty": "medium",
+      "question": "You're mapping the maze. Which directional marker would help others navigate most effectively?",
+      "options": [
+        "A compass rose showing N, S, E, W",
+        "Your favorite color",
+        "Random symbols",
+        "No markers needed"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Maps use cardinal directions (compass rose) as a universal reference system for navigation and orientation.",
+      "gameContext": "Map Creation - geographic tools and representations"
+    },
+    {
+      "id": "ss_002",
+      "standard": "NCSS Theme 7 - Economics",
+      "grade": 7,
+      "difficulty": "medium",
+      "question": "You have limited inventory space. Three traders offer items. Which economic principle should guide your decision?",
+      "options": [
+        "Opportunity cost - what you give up",
+        "Buy everything available",
+        "Choose randomly",
+        "Never trade"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Opportunity cost is what you sacrifice when choosing one option over others. With limited resources, consider what you're giving up.",
+      "gameContext": "Trading Decision - economic decision-making"
+    },
+    {
+      "id": "ss_003",
+      "standard": "NCSS Theme 5 - Institutions",
+      "grade": 6,
+      "difficulty": "easy",
+      "question": "The maze has a rule: 'Help others when possible.' Why do communities create rules?",
+      "options": [
+        "To organize behavior and promote cooperation",
+        "To make life difficult",
+        "No real reason",
+        "Only to punish people"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Rules and laws help organize society, protect individuals, and promote cooperation toward common goals.",
+      "gameContext": "Community Rules - social institutions"
+    },
+    {
+      "id": "ss_004",
+      "standard": "Historical Thinking",
+      "grade": 7,
+      "difficulty": "hard",
+      "question": "You find ancient maze writings. They mention 'great drought' then 'abandoned settlements.' What's the relationship?",
+      "options": [
+        "Cause and effect - drought caused abandonment",
+        "No connection",
+        "Coincidence",
+        "Effect and cause - abandonment caused drought"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Historical events often show cause-and-effect relationships. Environmental changes (drought) can cause human migration.",
+      "gameContext": "Ancient Texts - historical causation"
+    },
+    {
+      "id": "ss_005",
+      "standard": "NCSS Theme 10 - Civic Ideals",
+      "grade": 8,
+      "difficulty": "medium",
+      "question": "Your team must decide which path to take. Two members disagree. What's the most democratic approach?",
+      "options": [
+        "Vote and majority decides",
+        "Strongest person decides",
+        "Ignore the disagreement",
+        "Split up immediately"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Democratic decision-making involves giving everyone a voice and using fair processes like voting to resolve disagreements.",
+      "gameContext": "Team Decision - democratic processes"
+    },
+    {
+      "id": "ss_006",
+      "standard": "NCSS Theme 3 - Geography",
+      "grade": 6,
+      "difficulty": "medium",
+      "question": "The maze has wet areas with mushrooms and dry areas with crystals. What geographic concept does this show?",
+      "options": [
+        "Climate affects what grows in regions",
+        "Everything grows everywhere",
+        "Random distribution",
+        "Only human choices matter"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Physical geography (climate, water availability) influences what organisms and resources are found in different regions.",
+      "gameContext": "Resource Distribution - human-environment interaction"
+    },
+    {
+      "id": "ss_007",
+      "standard": "NCSS Theme 7 - Economics",
+      "grade": 7,
+      "difficulty": "hard",
+      "question": "Food is abundant in the maze. Water is rare. Which will likely have higher trade value?",
+      "options": [
+        "Water (scarce resource)",
+        "Food (abundant resource)",
+        "Both equal value",
+        "Neither has value"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Scarcity drives value. Resources that are rare and needed (water) typically command higher prices than abundant resources.",
+      "gameContext": "Resource Trading - supply and demand"
+    },
+    {
+      "id": "ss_008",
+      "standard": "NCSS Theme 5 - Culture",
+      "grade": 6,
+      "difficulty": "easy",
+      "question": "Maze explorers developed a tradition of marking safe paths with blue symbols. This is an example of what?",
+      "options": [
+        "Cultural practice developing from shared needs",
+        "Natural law",
+        "Genetic behavior",
+        "Random accident"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cultures develop practices, symbols, and traditions to meet common needs and communicate important information.",
+      "gameContext": "Symbol System - cultural development"
+    },
+    {
+      "id": "ss_009",
+      "standard": "Historical Thinking",
+      "grade": 8,
+      "difficulty": "medium",
+      "question": "You find three artifacts from different eras. How would historians analyze them?",
+      "options": [
+        "Compare them chronologically to see changes over time",
+        "Focus only on the newest one",
+        "Ignore the oldest items",
+        "Assume they're all from the same time"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Historians use chronological thinking to understand how things change over time and analyze patterns of continuity and change.",
+      "gameContext": "Artifact Analysis - historical methodology"
+    },
+    {
+      "id": "ss_010",
+      "standard": "NCSS Theme 3 - Geography",
+      "grade": 7,
+      "difficulty": "medium",
+      "question": "The maze has a central chamber where many paths meet. What geographic term describes this?",
+      "options": [
+        "Hub or central node",
+        "Peninsula",
+        "Archipelago",
+        "Delta"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A hub is a central point where routes converge, important in transportation geography and network analysis.",
+      "gameContext": "Maze Structure - spatial patterns"
+    },
+    {
+      "id": "ss_011",
+      "standard": "NCSS Theme 10 - Civic Ideals",
+      "grade": 8,
+      "difficulty": "hard",
+      "question": "Your exploration team creates a rule that everyone must share discoveries. What civic principle does this reflect?",
+      "options": [
+        "Common good over individual benefit",
+        "Winner takes all",
+        "Might makes right",
+        "Survival of the fittest"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Democratic societies balance individual rights with the common good, creating rules that benefit the whole community.",
+      "gameContext": "Team Rules - civic responsibility"
+    },
+    {
+      "id": "ss_012",
+      "standard": "NCSS Theme 7 - Economics",
+      "grade": 6,
+      "difficulty": "easy",
+      "question": "You specialize in finding crystals while your teammate finds food. You trade. What economic principle is this?",
+      "options": [
+        "Specialization and trade",
+        "Hoarding resources",
+        "Competition",
+        "Avoiding work"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Specialization (focusing on what you do best) and trade benefit everyone by increasing overall efficiency and productivity.",
+      "gameContext": "Resource Specialization - division of labor"
+    },
+    {
+      "id": "ss_013",
+      "standard": "Historical Thinking",
+      "grade": 7,
+      "difficulty": "medium",
+      "question": "Old maze maps show different paths than current ones. What might explain this change?",
+      "options": [
+        "Physical changes over time (erosion, collapse)",
+        "Maps were always wrong",
+        "Magic only",
+        "No reason needed"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Historical sources must be analyzed critically. Physical environments change over time due to natural processes and human activity.",
+      "gameContext": "Map Comparison - analyzing sources"
+    },
+    {
+      "id": "ss_014",
+      "standard": "NCSS Theme 5 - Identity",
+      "grade": 6,
+      "difficulty": "medium",
+      "question": "Explorers identify as 'Pathfinders' and work together. How does group identity affect behavior?",
+      "options": [
+        "Creates cooperation and shared purpose",
+        "Has no effect",
+        "Only causes conflict",
+        "Prevents all communication"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Group identity can promote cooperation, create shared values, and motivate people to work toward common goals.",
+      "gameContext": "Team Identity - group dynamics"
+    },
+    {
+      "id": "ss_015",
+      "standard": "NCSS Theme 3 - Geography",
+      "grade": 8,
+      "difficulty": "hard",
+      "question": "You notice settlements appear near water sources. What geographic principle does this demonstrate?",
+      "options": [
+        "Human settlements are influenced by physical features",
+        "Location is completely random",
+        "Water has no importance",
+        "Only social factors matter"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Human-environment interaction: people settle near resources (water, food, shelter), showing how geography influences human behavior.",
+      "gameContext": "Settlement Patterns - geographic influence"
+    }
+  ],
+  "implementationNotes": {
+    "integration": "Questions embed social studies concepts in game scenarios naturally",
+    "criticalThinking": "Emphasizes analysis, evidence-based reasoning, and perspective-taking",
+    "realWorld": "Connects game situations to real-world social studies concepts",
+    "standards": "Aligned with NCSS (National Council for Social Studies) thematic strands",
+    "interdisciplinary": "Many questions connect to geography, economics, civics, and history simultaneously"
+  }
+}

@@ -1089,42 +1089,42 @@ export const MazeGame: React.FC = () => {
       const hazardConfig = ITEMS_CONFIG[hazardItem];
 
       return (
-        <div className="bg-slate-800 p-2 rounded-lg border border-slate-700 animate-in zoom-in max-w-md w-full max-h-[70vh] overflow-y-auto animate-flash-alert">
-          <div className="flex items-center justify-between mb-1.5">
-            <div className="flex items-center gap-2">
+        <div className="bg-slate-800 p-1.5 rounded-lg border border-slate-700 animate-in zoom-in max-w-md w-full max-h-[80vh] overflow-y-auto animate-flash-alert">
+          <div className="flex items-center justify-between mb-1">
+            <div className="flex items-center gap-1.5">
               {hazardConfig && (
-                <div className={`text-2xl ${hazardConfig.color}`}>
+                <div className={`text-lg ${hazardConfig.color}`}>
                   {hazardConfig.char}
                 </div>
               )}
               <div>
-                <h2 className="text-sm font-bold text-white">{modal.title}</h2>
+                <h2 className="text-[11px] font-bold text-white leading-tight">{modal.title}</h2>
                 {hazardConfig && (
-                  <div className="text-cyan-400 font-bold text-xs">{hazardConfig.name}</div>
+                  <div className="text-cyan-400 font-bold text-[10px] leading-tight">{hazardConfig.name}</div>
                 )}
               </div>
             </div>
           </div>
 
-          <p className="text-slate-300 mb-2 text-xs leading-tight">{modal.message}</p>
+          <p className="text-slate-300 mb-1.5 text-[10px] leading-tight">{modal.message}</p>
 
-          <div className="grid grid-cols-3 gap-1 mb-2">
+          <div className="grid grid-cols-3 gap-1 mb-1.5">
             {bag.map((item, i) => (
               <button
                 key={i}
                 onClick={() => modal.onConfirm && modal.onConfirm(item)}
-                className="aspect-square bg-slate-700 hover:bg-slate-600 rounded flex flex-col items-center justify-center gap-0.5 transition-colors border border-slate-600"
+                className="aspect-square bg-slate-700 hover:bg-slate-600 rounded flex flex-col items-center justify-center gap-0.5 transition-colors border border-slate-600 p-1"
                 title={ITEMS_CONFIG[item]?.name}
               >
-                <span className="text-xl">{ITEMS_CONFIG[item]?.char}</span>
-                <span className="text-[8px] text-slate-400 truncate w-full text-center px-0.5 leading-tight">{ITEMS_CONFIG[item]?.name}</span>
+                <span className="text-base">{ITEMS_CONFIG[item]?.char}</span>
+                <span className="text-[7px] text-slate-400 truncate w-full text-center leading-tight">{ITEMS_CONFIG[item]?.name}</span>
               </button>
             ))}
           </div>
 
           <button
             onClick={() => modal.onConfirm && modal.onConfirm(null)}
-            className="w-full py-1 bg-red-900/50 hover:bg-red-900/80 text-red-200 rounded text-[10px] font-bold transition-colors border border-red-900"
+            className="w-full py-1 bg-red-900/50 hover:bg-red-900/80 text-red-200 rounded text-[9px] font-bold transition-colors border border-red-900"
           >
             Take Damage (No Item)
           </button>

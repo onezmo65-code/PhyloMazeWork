@@ -3,3 +3,4 @@ android/app/build/
 dist/
 *.apk
 
+node_modules

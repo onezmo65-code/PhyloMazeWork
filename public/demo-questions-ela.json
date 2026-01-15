@@ -1,0 +1,260 @@
+{
+  "title": "English Language Arts Questions",
+  "description": "Aligned with Common Core ELA Standards - Reading, Writing, and Language (Grades 5-8)",
+  "standards": [
+    "CCSS.ELA-LITERACY.RL.6.1 - Cite textual evidence",
+    "CCSS.ELA-LITERACY.RI.7.2 - Determine central ideas",
+    "CCSS.ELA-LITERACY.L.6.4 - Determine word meanings",
+    "CCSS.ELA-LITERACY.W.7.1 - Write arguments",
+    "CCSS.ELA-LITERACY.RL.8.3 - Analyze character development"
+  ],
+  "questions": [
+    {
+      "id": "ela_001",
+      "standard": "CCSS.ELA-LITERACY.L.6.4",
+      "grade": 6,
+      "difficulty": "medium",
+      "question": "Sign reads: 'Treacherous path ahead.' Based on context (warning sign at dangerous crossing), what does 'treacherous' mean?",
+      "options": [
+        "Dangerous or hazardous",
+        "Beautiful and scenic",
+        "Short and quick",
+        "Well-maintained"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Context clues (warning, dangerous crossing) help determine 'treacherous' means dangerous or full of hazards.",
+      "gameContext": "Warning Sign - vocabulary in context"
+    },
+    {
+      "id": "ela_002",
+      "standard": "CCSS.ELA-LITERACY.RL.6.1",
+      "grade": 6,
+      "difficulty": "medium",
+      "question": "Inscription: 'The wise explorer knows when to rest.' Which evidence supports that the writer values caution?",
+      "options": [
+        "'knows when to rest' shows valuing careful decisions",
+        "The word 'explorer' shows adventure only",
+        "No evidence of caution",
+        "'wise' means intelligent, not cautious"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The phrase 'knows when to rest' directly supports the idea of valuing careful, measured behavior over recklessness.",
+      "gameContext": "Ancient Inscription - citing textual evidence"
+    },
+    {
+      "id": "ela_003",
+      "standard": "CCSS.ELA-LITERACY.RI.7.2",
+      "grade": 7,
+      "difficulty": "hard",
+      "question": "Passage: 'Waters rise. Paths flood. Smart travelers wait. Impatient ones perish.' What's the central idea?",
+      "options": [
+        "Patience and timing are crucial for survival",
+        "Water is dangerous always",
+        "Travel is impossible",
+        "Only weather matters"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The passage contrasts smart/patient travelers (who wait) with impatient ones (who perish), emphasizing patience as key to survival.",
+      "gameContext": "Warning Passage - determining central ideas"
+    },
+    {
+      "id": "ela_004",
+      "standard": "CCSS.ELA-LITERACY.L.7.5",
+      "grade": 7,
+      "difficulty": "medium",
+      "question": "Note says: 'This maze is a puzzle wrapped in a mystery.' What literary device is used?",
+      "options": [
+        "Metaphor (comparing maze to puzzle/mystery)",
+        "Simile (using 'like' or 'as')",
+        "Alliteration",
+        "Onomatopoeia"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A metaphor directly compares two things without 'like' or 'as.' The maze IS a puzzle/mystery, not just similar to one.",
+      "gameContext": "Explorer's Note - figurative language"
+    },
+    {
+      "id": "ela_005",
+      "standard": "CCSS.ELA-LITERACY.RL.8.3",
+      "grade": 8,
+      "difficulty": "hard",
+      "question": "Journal: 'Day 1: I fear nothing. Day 30: I've learned respect for this place.' How has the character changed?",
+      "options": [
+        "From overconfident to humble/wise",
+        "From brave to cowardly",
+        "No change occurred",
+        "From smart to foolish"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The character arc shows growth from naive fearlessness ('fear nothing') to mature respect, indicating development through experience.",
+      "gameContext": "Character Journal - analyzing character development"
+    },
+    {
+      "id": "ela_006",
+      "standard": "CCSS.ELA-LITERACY.L.6.4",
+      "grade": 6,
+      "difficulty": "easy",
+      "question": "Scroll: 'The chamber was illuminated by glowing crystals.' What does 'illuminated' mean?",
+      "options": [
+        "Lit up or brightened",
+        "Darkened",
+        "Destroyed",
+        "Hidden"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Context (glowing crystals providing light) indicates 'illuminated' means lit up or made bright.",
+      "gameContext": "Ancient Scroll - vocabulary"
+    },
+    {
+      "id": "ela_007",
+      "standard": "CCSS.ELA-LITERACY.W.7.1",
+      "grade": 7,
+      "difficulty": "hard",
+      "question": "Debate: Should your team risk a shortcut through danger or take the safe, longer path? Which is the strongest argument FOR the safe path?",
+      "options": [
+        "'Safety ensures we complete our mission; dead explorers achieve nothing.'",
+        "'I just think the safe way is better.'",
+        "'Everyone else is doing it.'",
+        "'The dangerous way looks scary.'"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Strong arguments use logic and evidence. Option A provides reasoning (mission completion requires survival) supporting the claim.",
+      "gameContext": "Team Debate - constructing arguments"
+    },
+    {
+      "id": "ela_008",
+      "standard": "CCSS.ELA-LITERACY.RI.6.8",
+      "grade": 6,
+      "difficulty": "medium",
+      "question": "Sign: 'Explorers report success this way.' Another sign: 'Many have died on this path.' Which is more credible for safety?",
+      "options": [
+        "Second sign - specific evidence about outcomes",
+        "First sign - sounds positive",
+        "Both equally credible",
+        "Neither has any value"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Evaluating arguments requires assessing evidence. Specific data about deaths is more credible than vague 'success' claims.",
+      "gameContext": "Competing Signs - evaluating arguments"
+    },
+    {
+      "id": "ela_009",
+      "standard": "CCSS.ELA-LITERACY.L.8.5",
+      "grade": 8,
+      "difficulty": "medium",
+      "question": "Description: 'The silence was deafening.' What effect does this oxymoron create?",
+      "options": [
+        "Emphasizes the intensity of the quiet",
+        "Shows actual loud noise",
+        "Creates confusion only",
+        "Has no effect"
+      ],
+      "correctAnswer": 0,
+      "explanation": "An oxymoron combines contradictory terms for effect. 'Deafening silence' emphasizes how profound and overwhelming the quiet feels.",
+      "gameContext": "Environmental Description - figurative language"
+    },
+    {
+      "id": "ela_010",
+      "standard": "CCSS.ELA-LITERACY.RL.7.4",
+      "grade": 7,
+      "difficulty": "hard",
+      "question": "Poem on wall: 'Left leads to light, Right brings the night, Forward is fight, Backward is blight.' What's the mood?",
+      "options": [
+        "Ominous and uncertain - all choices have risks",
+        "Happy and carefree",
+        "Boring and dull",
+        "Purely informative"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Word choice ('night,' 'fight,' 'blight') and the structure (all paths have negative elements) create an ominous, uncertain mood.",
+      "gameContext": "Wall Poem - analyzing mood and tone"
+    },
+    {
+      "id": "ela_011",
+      "standard": "CCSS.ELA-LITERACY.RI.7.6",
+      "grade": 7,
+      "difficulty": "medium",
+      "question": "Two accounts of same event. Account A: 'heroic explorer.' Account B: 'reckless fool.' What do different word choices reveal?",
+      "options": [
+        "Authors have different points of view/perspectives",
+        "One author is lying",
+        "Words mean the same thing",
+        "No difference exists"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Word choice reflects perspective. 'Heroic' shows admiration, 'reckless fool' shows disapproval of the same person's actions.",
+      "gameContext": "Historical Accounts - point of view"
+    },
+    {
+      "id": "ela_012",
+      "standard": "CCSS.ELA-LITERACY.L.6.2",
+      "grade": 6,
+      "difficulty": "easy",
+      "question": "Sign text: 'Dont go their. Its dangerous.' What needs correction?",
+      "options": [
+        "Don't, there, It's (apostrophes and spelling)",
+        "Perfect as written",
+        "Only capitalization",
+        "Only punctuation at end"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Errors: 'Dont' → 'Don't', 'their' → 'there', 'Its' → 'It's'. Apostrophes show contractions and proper word choice matters.",
+      "gameContext": "Warning Sign - conventions of English"
+    },
+    {
+      "id": "ela_013",
+      "standard": "CCSS.ELA-LITERACY.RL.8.2",
+      "grade": 8,
+      "difficulty": "hard",
+      "question": "Story: A greedy explorer hoards supplies. Later, alone and injured, no one helps him. What's the theme?",
+      "options": [
+        "Actions have consequences; selfishness leads to isolation",
+        "Exploring is dangerous",
+        "Always hoard resources",
+        "Injuries are common"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Theme is the central message. The story shows how selfish actions (hoarding) lead to negative consequences (abandonment).",
+      "gameContext": "Cautionary Tale - determining theme"
+    },
+    {
+      "id": "ela_014",
+      "standard": "CCSS.ELA-LITERACY.W.6.3",
+      "grade": 6,
+      "difficulty": "medium",
+      "question": "You're writing about your maze journey. Which opening sentence best establishes setting and mood?",
+      "options": [
+        "'The damp walls glistened as shadows danced in my torchlight.'",
+        "'I went into a maze.'",
+        "'It was a place.'",
+        "'There were walls.'"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Effective narratives use descriptive details. Option A establishes setting (damp maze) and mood (eerie) with specific sensory details.",
+      "gameContext": "Journal Writing - narrative techniques"
+    },
+    {
+      "id": "ela_015",
+      "standard": "CCSS.ELA-LITERACY.RI.8.3",
+      "grade": 8,
+      "difficulty": "hard",
+      "question": "Manual: '1. Survey area. 2. Mark hazards. 3. Test path. 4. Proceed.' Why is this sequence important?",
+      "options": [
+        "Each step depends on previous ones for safety",
+        "Order doesn't matter",
+        "Only step 4 matters",
+        "Just a random list"
+      ],
+      "correctAnswer": 0,
+      "explanation": "In procedural texts, sequence matters. You must survey before marking, mark before testing, test before proceeding safely.",
+      "gameContext": "Safety Manual - analyzing text structure"
+    }
+  ],
+  "implementationNotes": {
+    "literacy": "Questions develop reading comprehension, vocabulary, and analytical skills",
+    "authentic": "Uses game-relevant texts (signs, journals, inscriptions) for authentic reading practice",
+    "thinking": "Emphasizes critical thinking about language, meaning, and author's craft",
+    "writing": "Some questions assess writing/argument construction skills",
+    "progression": "Questions increase in complexity from grades 6-8"
+  }
+}

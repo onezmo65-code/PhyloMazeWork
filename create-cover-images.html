@@ -29,6 +29,8 @@
             cursor: crosshair;
             display: block;
             margin: 10px 0;
+            max-width: 100%;
+            height: auto;
         }
         button {
             background: #4CAF50;
@@ -42,6 +44,10 @@
         }
         button:hover {
             background: #45a049;
+        }
+        button:disabled {
+            background: #666;
+            cursor: not-allowed;
         }
         input[type="file"] {
             margin: 10px 0;
@@ -70,6 +76,20 @@
             color: white;
             border-radius: 5px;
         }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .status.success {
+            background: #4CAF50;
+            color: white;
+        }
+        .status.error {
+            background: #f44336;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -82,7 +102,7 @@
                 <li>Upload a screenshot from your game</li>
                 <li>Customize the title text (optional)</li>
                 <li>Click "Generate" for each size</li>
-                <li>Right-click on the canvas and "Save image as..."</li>
+                <li>Click "Download" to save the image</li>
                 <li>Upload to CrazyGames</li>
             </ol>
         </div>
@@ -90,6 +110,7 @@
         <div class="controls">
             <h3>Upload Screenshot:</h3>
             <input type="file" id="imageUpload" accept="image/*">
+            <div id="uploadStatus"></div>
 
             <h3>Title Text:</h3>
             <input type="text" id="titleText" value="NEBULA MAZE" placeholder="Enter title">
@@ -100,8 +121,8 @@
         <div class="canvas-container">
             <h2>1. Landscape 16:9 (1920x1080)</h2>
             <div class="info">Required for: Homepage, Category pages</div>
-            <button onclick="generateLandscape()">Generate Landscape Image</button>
-            <button onclick="downloadCanvas('landscape')">Download Landscape</button>
+            <button onclick="generateLandscape()" id="btnLandscape" disabled>Generate Landscape Image</button>
+            <button onclick="downloadCanvas('landscape')" id="btnDownloadLandscape" disabled>Download Landscape</button>
             <br><br>
             <canvas id="landscapeCanvas" width="1920" height="1080"></canvas>
         </div>
@@ -110,36 +131,52 @@
         <div class="canvas-container">
             <h2>2. Portrait 2:3 (800x1200)</h2>
             <div class="info">Required for: Mobile, Vertical displays</div>
-            <button onclick="generatePortrait()">Generate Portrait Image</button>
-            <button onclick="downloadCanvas('portrait')">Download Portrait</button>
+            <button onclick="generatePortrait()" id="btnPortrait" disabled>Generate Portrait Image</button>
+            <button onclick="downloadCanvas('portrait')" id="btnDownloadPortrait" disabled>Download Portrait</button>
             <br><br>
             <canvas id="portraitCanvas" width="800" height="1200"></canvas>
         </div>
 
-        <!-- Square 1:1 (for reference) -->
+        <!-- Square 1:1 -->
         <div class="canvas-container">
-            <h2>3. Square 1:1 (800x800) ✅ Already Uploaded</h2>
-            <div class="info">This size is already uploaded to CrazyGames</div>
+            <h2>3. Square 1:1 (800x800)</h2>
+            <div class="info">Required for: Thumbnail, Icon display</div>
+            <button onclick="generateSquare()" id="btnSquare" disabled>Generate Square Image</button>
+            <button onclick="downloadCanvas('square')" id="btnDownloadSquare" disabled>Download Square</button>
+            <br><br>
+            <canvas id="squareCanvas" width="800" height="800"></canvas>
         </div>
     </div>
 
     <script>
         let uploadedImage = null;
 
+        // Handle image upload
         document.getElementById('imageUpload').addEventListener('change', function(e) {
             const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const img = new Image();
-                    img.onload = function() {
-                        uploadedImage = img;
-                        alert('Image loaded! Now click "Generate" buttons to create cover images.');
-                    };
-                    img.src = event.target.result;
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                uploadedImage = new Image();
+                uploadedImage.onload = function() {
+                    const status = document.getElementById('uploadStatus');
+                    status.className = 'status success';
+                    status.textContent = `✓ Image loaded: ${uploadedImage.width}x${uploadedImage.height}`;
+
+                    // Enable all generate buttons
+                    document.getElementById('btnLandscape').disabled = false;
+                    document.getElementById('btnPortrait').disabled = false;
+                    document.getElementById('btnSquare').disabled = false;
                 };
-                reader.readAsDataURL(file);
-            }
+                uploadedImage.onerror = function() {
+                    const status = document.getElementById('uploadStatus');
+                    status.className = 'status error';
+                    status.textContent = '✗ Failed to load image';
+                };
+                uploadedImage.src = event.target.result;
+            };
+            reader.readAsDataURL(file);
         });
 
         function generateLandscape() {
@@ -178,6 +215,9 @@
             ctx.fillText(subtitle, canvas.width / 2, canvas.height - 60);
 
             ctx.shadowBlur = 0;
+
+            // Enable download button
+            document.getElementById('btnDownloadLandscape').disabled = false;
         }
 
         function generatePortrait() {
@@ -231,15 +271,63 @@
             ctx.fillText(line, canvas.width / 2, y);
 
             ctx.shadowBlur = 0;
+
+            // Enable download button
+            document.getElementById('btnDownloadPortrait').disabled = false;
+        }
+
+        function generateSquare() {
+            if (!uploadedImage) {
+                alert('Please upload an image first!');
+                return;
+            }
+
+            const canvas = document.getElementById('squareCanvas');
+            const ctx = canvas.getContext('2d');
+            const title = document.getElementById('titleText').value;
+            const subtitle = document.getElementById('subtitleText').value;
+
+            // Clear canvas
+            ctx.fillStyle = '#1a1a2e';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw image
+            ctx.drawImage(uploadedImage, 0, 0, canvas.width, canvas.height);
+
+            // Overlay
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+            ctx.fillRect(0, 0, canvas.width, 150);
+            ctx.fillRect(0, canvas.height - 120, canvas.width, 120);
+
+            // Title
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 72px Arial';
+            ctx.textAlign = 'center';
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+            ctx.shadowBlur = 15;
+            ctx.fillText(title, canvas.width / 2, 100);
+
+            // Subtitle
+            ctx.font = '32px Arial';
+            ctx.fillText(subtitle, canvas.width / 2, canvas.height - 60);
+
+            ctx.shadowBlur = 0;
+
+            // Enable download button
+            document.getElementById('btnDownloadSquare').disabled = false;
         }
 
         function downloadCanvas(type) {
-            const canvas = type === 'landscape'
-                ? document.getElementById('landscapeCanvas')
-                : document.getElementById('portraitCanvas');
+            const canvasId = type === 'landscape' ? 'landscapeCanvas'
+                           : type === 'portrait' ? 'portraitCanvas'
+                           : 'squareCanvas';
 
+            const canvas = document.getElementById(canvasId);
+
+            // Create download link
             const link = document.createElement('a');
-            link.download = `nebula-maze-${type}-cover.png`;
+            const timestamp = new Date().getTime();
+            link.download = `nebula-maze-${type}-${timestamp}.png`;
             link.href = canvas.toDataURL('image/png');
             link.click();
         }

@@ -5,11 +5,24 @@ import { getAnalytics } from "firebase/analytics";
 import "./index.css";
 import App from "./App.tsx";
 
-// CrazyGames Sitelock Protection
-if (!window.location.origin.endsWith("crazygames.com") &&
-    !window.location.hostname.includes("localhost") &&
-    !window.location.hostname.includes("127.0.0.1")) {
-  document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:Arial;font-size:24px;color:#fff;background:#1a1a2e;">This game is only available on CrazyGames.com</div>';
+// Domain Protection - Allow game hosting and testing domains
+const allowedDomains = [
+  'crazygames.com',      // CrazyGames production
+  'crazygames.net',      // CrazyGames staging
+  '1001juegos.com',      // CrazyGames partner
+  '1001games.com',       // CrazyGames partner
+  'firebaseapp.com',     // Firebase hosting
+  'web.app',             // Firebase web.app hosting
+  'localhost',           // Local development
+  '127.0.0.1'            // Local development IP
+];
+
+const isAllowedDomain = allowedDomains.some(domain =>
+  window.location.hostname.includes(domain)
+);
+
+if (!isAllowedDomain) {
+  document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:Arial;font-size:24px;color:#fff;background:#1a1a2e;">This game is only available on authorized platforms.</div>';
   throw new Error("Unauthorized domain");
 }
 
