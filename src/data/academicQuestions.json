@@ -77,10 +77,10 @@
     "category": "Geography"
   },
   {
-    "id": "geo_river",
-    "text": "Longest river?",
-    "options": ["Nile", "Amazon", "Mississippi"],
-    "answer": "Nile",
+    "id": "geo_continent",
+    "text": "Largest continent?",
+    "options": ["Asia", "Africa", "North America"],
+    "answer": "Asia",
     "type": "choice",
     "category": "Geography"
   },
@@ -189,18 +189,34 @@
     "category": "Science"
   },
   {
-    "id": "sci_light",
-    "text": "Speed of light unit?",
-    "options": ["km/s", "mph"],
+    "id": "sci_light_metric",
+    "text": "Scientific unit for speed of light (metric)?",
+    "options": ["km/s", "m/s", "cm/s"],
     "answer": "km/s",
     "type": "choice",
     "category": "Science"
   },
   {
-    "id": "sci_boil",
+    "id": "sci_light_imperial",
+    "text": "Speed of light can be measured in (imperial)?",
+    "options": ["mph", "ft/s", "in/s"],
+    "answer": "mph",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "sci_boil_celsius",
     "text": "Water boils at?",
-    "options": ["100°C", "212°F"],
+    "options": ["100°C", "100°F", "0°C"],
     "answer": "100°C",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "sci_boil_fahrenheit",
+    "text": "Water boils at?",
+    "options": ["212°F", "212°C", "32°F"],
+    "answer": "212°F",
     "type": "choice",
     "category": "Science"
   },
@@ -285,14 +301,6 @@
     "category": "Social"
   },
   {
-    "id": "fun_car",
-    "text": "First car inventor?",
-    "options": ["Ford", "Benz"],
-    "answer": "Benz",
-    "type": "choice",
-    "category": "General"
-  },
-  {
     "id": "fun_boat",
     "text": "Boats float on water.",
     "options": ["True", "False"],
@@ -334,9 +342,9 @@
   },
   {
     "id": "fun_micro",
-    "text": "Microwave cooks with?",
-    "options": ["Heat", "Radiation"],
-    "answer": "Radiation",
+    "text": "Microwave ovens produce heat using?",
+    "options": ["Radiation (microwaves)", "Heating coil", "Gas burner"],
+    "answer": "Radiation (microwaves)",
     "type": "choice",
     "category": "General"
   },
@@ -390,9 +398,9 @@
   },
   {
     "id": "vac_water",
-    "text": "Drinking water is safe.",
+    "text": "River or pond water is safe to drink.",
     "options": ["True", "False"],
-    "answer": "True",
+    "answer": "False",
     "type": "boolean",
     "category": "General"
   },
@@ -453,10 +461,18 @@
     "category": "Math"
   },
   {
-    "id": "unit_freeze",
-    "text": "Water freezes at?",
-    "options": ["0°C", "32°F"],
+    "id": "unit_freeze_celsius",
+    "text": "Water freezes at (Celsius)?",
+    "options": ["0°C", "-32°C", "100°C"],
     "answer": "0°C",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "unit_freeze_fahrenheit",
+    "text": "Water freezes at (Fahrenheit)?",
+    "options": ["32°F", "0°F", "212°F"],
+    "answer": "32°F",
     "type": "choice",
     "category": "Science"
   },
@@ -469,10 +485,18 @@
     "category": "Math"
   },
   {
-    "id": "unit_gas",
-    "text": "Gasoline sold in?",
-    "options": ["Liters", "Gallons"],
+    "id": "unit_gas_metric",
+    "text": "In most countries worldwide, gasoline is sold in?",
+    "options": ["Liters", "Gallons", "Barrels"],
     "answer": "Liters",
+    "type": "choice",
+    "category": "General"
+  },
+  {
+    "id": "unit_gas_imperial",
+    "text": "In the United States, gasoline is sold in?",
+    "options": ["Gallons", "Liters", "Barrels"],
+    "answer": "Gallons",
     "type": "choice",
     "category": "General"
   },
@@ -485,10 +509,18 @@
     "category": "Math"
   },
   {
-    "id": "unit_temp",
-    "text": "Temperature unit?",
-    "options": ["Celsius", "Fahrenheit"],
+    "id": "unit_temp_metric",
+    "text": "Metric/International temperature unit?",
+    "options": ["Celsius", "Fahrenheit", "Kelvin"],
     "answer": "Celsius",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "unit_temp_imperial",
+    "text": "Imperial/American temperature unit?",
+    "options": ["Fahrenheit", "Celsius", "Kelvin"],
+    "answer": "Fahrenheit",
     "type": "choice",
     "category": "Science"
   },
@@ -501,10 +533,18 @@
     "category": "Math"
   },
   {
-    "id": "unit_speed",
-    "text": "Speed unit?",
-    "options": ["km/h", "mph"],
+    "id": "unit_speed_metric",
+    "text": "Metric speed unit?",
+    "options": ["km/h", "mph", "knots"],
     "answer": "km/h",
+    "type": "choice",
+    "category": "Science"
+  },
+  {
+    "id": "unit_speed_imperial",
+    "text": "Imperial/American speed unit?",
+    "options": ["mph", "km/h", "knots"],
+    "answer": "mph",
     "type": "choice",
     "category": "Science"
   },
@@ -598,8 +638,8 @@
   },
   {
     "id": "fun_school_bus",
-    "text": "Color of school bus?",
-    "options": ["Yellow", "Red"],
+    "text": "In the United States, school buses are typically?",
+    "options": ["Yellow", "Red", "Blue"],
     "answer": "Yellow",
     "type": "choice",
     "category": "General"
