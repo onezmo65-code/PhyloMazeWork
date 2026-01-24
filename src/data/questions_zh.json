@@ -1,0 +1,82 @@
+[
+  {
+    "id": "zh_folklore_1",
+    "text": "中国神话中，谁射下了九个太阳？",
+    "options": ["后羿", "孙悟空", "哪吒"],
+    "answer": "后羿",
+    "type": "choice",
+    "category": "神话"
+  },
+  {
+    "id": "zh_folklore_2",
+    "text": "哪个神话人物大闹天宫？",
+    "options": ["孙悟空", "哪吒", "二郎神"],
+    "answer": "孙悟空",
+    "type": "choice",
+    "category": "神话"
+  },
+  {
+    "id": "zh_geo_1",
+    "text": "中国的首都是哪里？",
+    "options": ["北京", "上海", "广州"],
+    "answer": "北京",
+    "type": "choice",
+    "category": "地理"
+  },
+  {
+    "id": "zh_culture_1",
+    "text": "中国的长城有多长？",
+    "options": ["超过20000公里", "1000公里", "500公里"],
+    "answer": "超过20000公里",
+    "type": "choice",
+    "category": "文化"
+  },
+  {
+    "id": "zh_history_1",
+    "text": "哪个朝代建造了兵马俑？",
+    "options": ["秦朝", "汉朝", "唐朝"],
+    "answer": "秦朝",
+    "type": "choice",
+    "category": "历史"
+  },
+  {
+    "id": "zh_festival_1",
+    "text": "中国新年也叫什么？",
+    "options": ["春节", "中秋节", "端午节"],
+    "answer": "春节",
+    "type": "choice",
+    "category": "文化"
+  },
+  {
+    "id": "zh_animal_1",
+    "text": "哪种动物是中国的国宝？",
+    "options": ["大熊猫", "老虎", "龙"],
+    "answer": "大熊猫",
+    "type": "choice",
+    "category": "自然"
+  },
+  {
+    "id": "zh_invention_1",
+    "text": "以下哪项是中国古代四大发明之一？",
+    "options": ["造纸术", "电灯", "电话"],
+    "answer": "造纸术",
+    "type": "choice",
+    "category": "历史"
+  },
+  {
+    "id": "zh_science_1",
+    "text": "地球绕着太阳转。",
+    "options": ["对", "错"],
+    "answer": "对",
+    "type": "boolean",
+    "category": "科学"
+  },
+  {
+    "id": "zh_social_1",
+    "text": "尊敬长辈是美德。",
+    "options": ["对", "错"],
+    "answer": "对",
+    "type": "boolean",
+    "category": "社会"
+  }
+]

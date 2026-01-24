@@ -8,10 +8,83 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <script src="https://sdk.crazygames.com/crazygames-sdk-v3.js"></script>
-    <title>Nebula Maze</title>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2187994309647585"
+         crossorigin="anonymous"></script>
+    <!-- Bitmedia Site Verification -->
+    <meta name="bitmedia-site-verification" content="547c651dfbe4295283a75d0bbf7f03ba" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Nebula Maze - An educational trivia maze game. Navigate through challenging mazes while answering questions about science, nature, geography, and more. Play free on web, Android, and iOS." />
+    <meta name="keywords" content="maze game, educational game, trivia game, puzzle game, brain game, learning game, quiz game, science trivia, geography quiz, nature quiz, kids game, family game, free game" />
+    <meta name="author" content="Onesmo" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://nebula-maze.web.app/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nebula-maze.web.app/" />
+    <meta property="og:title" content="Nebula Maze - Educational Trivia Maze Game" />
+    <meta property="og:description" content="Navigate through challenging mazes while answering trivia questions about science, nature, geography, and more. Free educational game for all ages!" />
+    <meta property="og:image" content="https://nebula-maze.web.app/vite.svg" />
+    <meta property="og:site_name" content="Nebula Maze" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://nebula-maze.web.app/" />
+    <meta name="twitter:title" content="Nebula Maze - Educational Trivia Maze Game" />
+    <meta name="twitter:description" content="Navigate through challenging mazes while answering trivia questions about science, nature, geography, and more. Free educational game for all ages!" />
+    <meta name="twitter:image" content="https://nebula-maze.web.app/vite.svg" />
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#1e293b" />
+    <meta name="application-name" content="Nebula Maze" />
+
+    <title>Nebula Maze - Educational Trivia Maze Game</title>
+    <style>
+      /* Prevent text selection and copying */
+      body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+      }
+      
+      /* Allow selection in input fields */
+      input, textarea {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+      }
+    </style>
   </head>
-  <body>
+  <body oncontextmenu="return false;" ondragstart="return false;">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Disable keyboard shortcuts for copying/saving
+      document.addEventListener('keydown', function(e) {
+        // Prevent Ctrl+C, Ctrl+U, Ctrl+S, Ctrl+A, Ctrl+Shift+I, F12
+        if ((e.ctrlKey || e.metaKey) && ['c', 'u', 's', 'a'].includes(e.key.toLowerCase())) {
+          e.preventDefault();
+          return false;
+        }
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'i') {
+          e.preventDefault();
+          return false;
+        }
+        if (e.key === 'F12') {
+          e.preventDefault();
+          return false;
+        }
+      });
+      // Disable right-click context menu
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "nl_folklore_1",
+    "text": "Welke Nederlandse legende gaat over een jongen die zijn vinger in een dijk stak?",
+    "options": ["Hans Brinker", "Sinterklaas", "De Vliegende Hollander"],
+    "answer": "Hans Brinker",
+    "type": "choice",
+    "category": "Folklore"
+  },
+  {
+    "id": "nl_folklore_2",
+    "text": "Welk spookschip komt uit Nederlandse legendes?",
+    "options": ["De Vliegende Hollander", "De Zwarte Parel", "De Titanic"],
+    "answer": "De Vliegende Hollander",
+    "type": "choice",
+    "category": "Folklore"
+  },
+  {
+    "id": "nl_geo_1",
+    "text": "Wat is de hoofdstad van Nederland?",
+    "options": ["Amsterdam", "Rotterdam", "Den Haag"],
+    "answer": "Amsterdam",
+    "type": "choice",
+    "category": "Geografie"
+  },
+  {
+    "id": "nl_culture_1",
+    "text": "Welke bloem is beroemd in Nederland?",
+    "options": ["Tulp", "Roos", "Zonnebloem"],
+    "answer": "Tulp",
+    "type": "choice",
+    "category": "Cultuur"
+  },
+  {
+    "id": "nl_art_1",
+    "text": "Welke Nederlandse schilder maakte 'De Sterrennacht'?",
+    "options": ["Vincent van Gogh", "Rembrandt", "Vermeer"],
+    "answer": "Vincent van Gogh",
+    "type": "choice",
+    "category": "Kunst"
+  },
+  {
+    "id": "nl_history_1",
+    "text": "Waarvoor zijn Nederlandse windmolens oorspronkelijk gebruikt?",
+    "options": ["Water pompen", "Elektriciteit maken", "Graan malen"],
+    "answer": "Water pompen",
+    "type": "choice",
+    "category": "Geschiedenis"
+  },
+  {
+    "id": "nl_food_1",
+    "text": "Welk kaasstadje is beroemd in Nederland?",
+    "options": ["Gouda", "Edam", "Leiden"],
+    "answer": "Gouda",
+    "type": "choice",
+    "category": "Cultuur"
+  },
+  {
+    "id": "nl_sport_1",
+    "text": "Welke sport op ijs is populair in Nederland?",
+    "options": ["Schaatsen", "IJshockey", "Curling"],
+    "answer": "Schaatsen",
+    "type": "choice",
+    "category": "Sport"
+  },
+  {
+    "id": "nl_science_1",
+    "text": "Nederland ligt onder zeeniveau.",
+    "options": ["Waar", "Niet waar"],
+    "answer": "Waar",
+    "type": "boolean",
+    "category": "Geografie"
+  },
+  {
+    "id": "nl_social_1",
+    "text": "Samenwerken helpt om problemen op te lossen.",
+    "options": ["Waar", "Niet waar"],
+    "answer": "Waar",
+    "type": "boolean",
+    "category": "Sociaal"
+  }
+]

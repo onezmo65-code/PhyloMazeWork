@@ -1,0 +1,82 @@
+[
+  {
+    "id": "fr_folklore_1",
+    "text": "Quel héros français a mené une armée à l'âge de 17 ans?",
+    "options": ["Jeanne d'Arc", "Napoléon", "Charlemagne"],
+    "answer": "Jeanne d'Arc",
+    "type": "choice",
+    "category": "Histoire"
+  },
+  {
+    "id": "fr_folklore_2",
+    "text": "Quel monstre légendaire vivrait dans les égouts de Paris?",
+    "options": ["Le Crocodile de Paris", "Le Loup-Garou", "La Bête du Gévaudan"],
+    "answer": "Le Crocodile de Paris",
+    "type": "choice",
+    "category": "Folklore"
+  },
+  {
+    "id": "fr_geo_1",
+    "text": "Quelle est la capitale de la France?",
+    "options": ["Paris", "Lyon", "Marseille"],
+    "answer": "Paris",
+    "type": "choice",
+    "category": "Géographie"
+  },
+  {
+    "id": "fr_culture_1",
+    "text": "Quel monument parisien est fait de fer?",
+    "options": ["La Tour Eiffel", "L'Arc de Triomphe", "Notre-Dame"],
+    "answer": "La Tour Eiffel",
+    "type": "choice",
+    "category": "Culture"
+  },
+  {
+    "id": "fr_history_1",
+    "text": "Qui était le Roi Soleil?",
+    "options": ["Louis XIV", "Louis XVI", "Napoléon"],
+    "answer": "Louis XIV",
+    "type": "choice",
+    "category": "Histoire"
+  },
+  {
+    "id": "fr_food_1",
+    "text": "Quel fromage français est connu pour son odeur forte?",
+    "options": ["Camembert", "Gruyère", "Mozzarella"],
+    "answer": "Camembert",
+    "type": "choice",
+    "category": "Culture"
+  },
+  {
+    "id": "fr_myth_1",
+    "text": "Dans la légende, qui a tiré l'épée du rocher?",
+    "options": ["Le Roi Arthur", "Lancelot", "Merlin"],
+    "answer": "Le Roi Arthur",
+    "type": "choice",
+    "category": "Mythologie"
+  },
+  {
+    "id": "fr_art_1",
+    "text": "Qui a peint La Joconde (Mona Lisa)?",
+    "options": ["Léonard de Vinci", "Picasso", "Monet"],
+    "answer": "Léonard de Vinci",
+    "type": "choice",
+    "category": "Art"
+  },
+  {
+    "id": "fr_science_1",
+    "text": "La Terre tourne autour du Soleil.",
+    "options": ["Vrai", "Faux"],
+    "answer": "Vrai",
+    "type": "boolean",
+    "category": "Science"
+  },
+  {
+    "id": "fr_social_1",
+    "text": "Partager avec les autres est une bonne action.",
+    "options": ["Vrai", "Faux"],
+    "answer": "Vrai",
+    "type": "boolean",
+    "category": "Social"
+  }
+]

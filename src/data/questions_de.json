@@ -1,0 +1,82 @@
+[
+  {
+    "id": "de_folklore_1",
+    "text": "Welche Brüder haben berühmte Märchen wie Rotkäppchen geschrieben?",
+    "options": ["Die Brüder Grimm", "Die Brüder Wright", "Die Brüder Marx"],
+    "answer": "Die Brüder Grimm",
+    "type": "choice",
+    "category": "Folklore"
+  },
+  {
+    "id": "de_folklore_2",
+    "text": "Welche Märchenfigur hat einen sehr langen Zopf?",
+    "options": ["Rapunzel", "Schneewittchen", "Aschenputtel"],
+    "answer": "Rapunzel",
+    "type": "choice",
+    "category": "Folklore"
+  },
+  {
+    "id": "de_geo_1",
+    "text": "Was ist die Hauptstadt von Deutschland?",
+    "options": ["Berlin", "München", "Hamburg"],
+    "answer": "Berlin",
+    "type": "choice",
+    "category": "Geographie"
+  },
+  {
+    "id": "de_culture_1",
+    "text": "Welches Fest wird in Deutschland mit Bier und Trachten gefeiert?",
+    "options": ["Oktoberfest", "Karneval", "Weihnachtsmarkt"],
+    "answer": "Oktoberfest",
+    "type": "choice",
+    "category": "Kultur"
+  },
+  {
+    "id": "de_history_1",
+    "text": "Welche Mauer teilte Berlin bis 1989?",
+    "options": ["Die Berliner Mauer", "Die Chinesische Mauer", "Hadrians Wall"],
+    "answer": "Die Berliner Mauer",
+    "type": "choice",
+    "category": "Geschichte"
+  },
+  {
+    "id": "de_music_1",
+    "text": "Welcher deutsche Komponist schrieb die 9. Sinfonie?",
+    "options": ["Beethoven", "Bach", "Mozart"],
+    "answer": "Beethoven",
+    "type": "choice",
+    "category": "Musik"
+  },
+  {
+    "id": "de_science_1",
+    "text": "Welcher deutsche Wissenschaftler entwickelte die Relativitätstheorie?",
+    "options": ["Albert Einstein", "Max Planck", "Werner Heisenberg"],
+    "answer": "Albert Einstein",
+    "type": "choice",
+    "category": "Wissenschaft"
+  },
+  {
+    "id": "de_food_1",
+    "text": "Welches Gebäck ist typisch deutsch und hat eine besondere Form?",
+    "options": ["Brezel", "Croissant", "Bagel"],
+    "answer": "Brezel",
+    "type": "choice",
+    "category": "Kultur"
+  },
+  {
+    "id": "de_bool_1",
+    "text": "Deutschland liegt in Europa.",
+    "options": ["Wahr", "Falsch"],
+    "answer": "Wahr",
+    "type": "boolean",
+    "category": "Geographie"
+  },
+  {
+    "id": "de_social_1",
+    "text": "Freundlichkeit macht die Welt besser.",
+    "options": ["Wahr", "Falsch"],
+    "answer": "Wahr",
+    "type": "boolean",
+    "category": "Sozial"
+  }
+]

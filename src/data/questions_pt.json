@@ -1,0 +1,82 @@
+[
+  {
+    "id": "pt_folklore_1",
+    "text": "Qual criatura do folclore brasileiro protege as florestas?",
+    "options": ["Curupira", "Saci-Pererê", "Boto"],
+    "answer": "Curupira",
+    "type": "choice",
+    "category": "Folclore"
+  },
+  {
+    "id": "pt_folklore_2",
+    "text": "Qual personagem do folclore brasileiro tem uma perna só e um gorro vermelho?",
+    "options": ["Saci-Pererê", "Curupira", "Boitatá"],
+    "answer": "Saci-Pererê",
+    "type": "choice",
+    "category": "Folclore"
+  },
+  {
+    "id": "pt_geo_1",
+    "text": "Qual é a capital do Brasil?",
+    "options": ["Brasília", "Rio de Janeiro", "São Paulo"],
+    "answer": "Brasília",
+    "type": "choice",
+    "category": "Geografia"
+  },
+  {
+    "id": "pt_culture_1",
+    "text": "Qual é a maior floresta tropical do mundo, localizada no Brasil?",
+    "options": ["Amazônia", "Mata Atlântica", "Pantanal"],
+    "answer": "Amazônia",
+    "type": "choice",
+    "category": "Geografia"
+  },
+  {
+    "id": "pt_history_1",
+    "text": "Qual país colonizou o Brasil?",
+    "options": ["Portugal", "Espanha", "Inglaterra"],
+    "answer": "Portugal",
+    "type": "choice",
+    "category": "História"
+  },
+  {
+    "id": "pt_culture_2",
+    "text": "Qual é o carnaval mais famoso do mundo?",
+    "options": ["Carnaval do Rio", "Carnaval de Veneza", "Mardi Gras"],
+    "answer": "Carnaval do Rio",
+    "type": "choice",
+    "category": "Cultura"
+  },
+  {
+    "id": "pt_sport_1",
+    "text": "Qual esporte é mais popular no Brasil?",
+    "options": ["Futebol", "Vôlei", "Basquete"],
+    "answer": "Futebol",
+    "type": "choice",
+    "category": "Esporte"
+  },
+  {
+    "id": "pt_nature_1",
+    "text": "Qual é a estátua famosa no Rio de Janeiro?",
+    "options": ["Cristo Redentor", "Estátua da Liberdade", "David"],
+    "answer": "Cristo Redentor",
+    "type": "choice",
+    "category": "Cultura"
+  },
+  {
+    "id": "pt_science_1",
+    "text": "O Brasil é o maior país da América do Sul.",
+    "options": ["Verdadeiro", "Falso"],
+    "answer": "Verdadeiro",
+    "type": "boolean",
+    "category": "Geografia"
+  },
+  {
+    "id": "pt_social_1",
+    "text": "Respeitar a natureza é importante para o futuro.",
+    "options": ["Verdadeiro", "Falso"],
+    "answer": "Verdadeiro",
+    "type": "boolean",
+    "category": "Social"
+  }
+]

@@ -1,11 +1,13 @@
+import { LanguageCode, loadLanguagePreference } from './i18n';
+
 export interface Question {
   id: string;
   text: string;
-  options: string[]; 
+  options: string[];
   answer: string; // For multi/sort, this is comma-separated values
   type: 'text' | 'choice' | 'image' | 'boolean' | 'multi' | 'sort' | 'short_answer';
-  category: 'Math' | 'Science' | 'Geography' | 'General' | 'Social';
-  imageDesc?: string; 
+  category: string;
+  imageDesc?: string;
   image?: string;
   timed?: boolean;
   timeLimit?: number;
@@ -19,25 +21,76 @@ const DEFAULT_QUESTIONS: Question[] = [
 
 class QuestionRegistry {
   private questions: Question[] = [...DEFAULT_QUESTIONS];
+  private regionalQuestions: Question[] = [];
   private isLoaded: boolean = false;
+  private currentLanguage: LanguageCode = 'en';
 
-  async load() {
-    if (this.isLoaded) return;
+  async load(language?: LanguageCode) {
+    const lang = language || loadLanguagePreference();
+    this.currentLanguage = lang;
+
     try {
+      // Load main questions
       const res = await fetch('/questions.json');
       if (res.ok) {
         const data = await res.json();
         this.questions = data;
-        this.isLoaded = true;
-        console.log('Questions loaded:', this.questions.length);
+        console.log('Main questions loaded:', this.questions.length);
       }
+
+      // Load regional questions for the language (if not English)
+      if (lang !== 'en') {
+        await this.loadRegionalQuestions(lang);
+      }
+
+      this.isLoaded = true;
     } catch (e) {
       console.error('Failed to load questions:', e);
     }
   }
 
+  async loadRegionalQuestions(lang: LanguageCode) {
+    try {
+      // Dynamic import of regional questions
+      const langMap: Record<LanguageCode, () => Promise<any>> = {
+        en: async () => ({ default: [] }),
+        es: () => import('../data/questions_es.json'),
+        fr: () => import('../data/questions_fr.json'),
+        de: () => import('../data/questions_de.json'),
+        nl: () => import('../data/questions_nl.json'),
+        zh: () => import('../data/questions_zh.json'),
+        ja: () => import('../data/questions_ja.json'),
+        ru: () => import('../data/questions_ru.json'),
+        pt: () => import('../data/questions_pt.json'),
+        ar: () => import('../data/questions_ar.json'),
+      };
+
+      const module = await langMap[lang]();
+      this.regionalQuestions = module.default || [];
+      console.log(`Regional questions loaded for ${lang}:`, this.regionalQuestions.length);
+    } catch (e) {
+      console.error(`Failed to load regional questions for ${lang}:`, e);
+      this.regionalQuestions = [];
+    }
+  }
+
+  setLanguage(lang: LanguageCode) {
+    if (lang !== this.currentLanguage) {
+      this.currentLanguage = lang;
+      this.loadRegionalQuestions(lang);
+    }
+  }
+
   getAll(): Question[] {
     return this.questions;
+  }
+
+  getRegional(): Question[] {
+    return this.regionalQuestions;
+  }
+
+  getAllWithRegional(): Question[] {
+    return [...this.questions, ...this.regionalQuestions];
   }
 
   add(q: Question) {
@@ -60,9 +113,14 @@ class QuestionRegistry {
   }
 
   getRandom(): Question {
-    if (this.questions.length === 0) return DEFAULT_QUESTIONS[0];
-    
-    const q = this.questions[Math.floor(Math.random() * this.questions.length)];
+    // Combine main questions with regional questions
+    const allQuestions = this.getAllWithRegional();
+    if (allQuestions.length === 0) return DEFAULT_QUESTIONS[0];
+
+    // 30% chance to get a regional question if available
+    const useRegional = this.regionalQuestions.length > 0 && Math.random() < 0.3;
+    const pool = useRegional ? this.regionalQuestions : this.questions;
+    const q = pool[Math.floor(Math.random() * pool.length)] || DEFAULT_QUESTIONS[0];
 
     // 10% chance to be timed
     if (Math.random() < 0.1) {

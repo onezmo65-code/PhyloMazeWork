@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 
 interface MusicPlayerProps {
   src: string;
@@ -6,12 +6,13 @@ interface MusicPlayerProps {
   isPlaying?: boolean;
 }
 
-export const MusicPlayer: React.FC<MusicPlayerProps> = ({ 
-  src, 
-  volume = 0.1, 
-  isPlaying = true 
+export const MusicPlayer: React.FC<MusicPlayerProps> = ({
+  src,
+  volume = 0.1,
+  isPlaying = true
 }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const hasStartedRef = useRef(false);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -19,29 +20,60 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({
     }
   }, [volume]);
 
+  const tryPlay = useCallback(() => {
+    if (audioRef.current && isPlaying && !hasStartedRef.current) {
+      const playPromise = audioRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            hasStartedRef.current = true;
+          })
+          .catch(() => {
+            // Autoplay blocked - will retry on user interaction
+          });
+      }
+    }
+  }, [isPlaying]);
+
+  useEffect(() => {
+    tryPlay();
+  }, [tryPlay, src]);
+
   useEffect(() => {
     if (audioRef.current) {
       if (isPlaying) {
-        // Handle autoplay policies
-        const playPromise = audioRef.current.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(error => {
-            console.log("Autoplay prevented:", error);
-            // Interaction might be required
-          });
-        }
+        tryPlay();
       } else {
         audioRef.current.pause();
+        hasStartedRef.current = false;
       }
     }
-  }, [isPlaying, src]);
+  }, [isPlaying, tryPlay]);
+
+  // Listen for any user interaction to start audio
+  useEffect(() => {
+    const handleInteraction = () => {
+      tryPlay();
+    };
+
+    // Add listeners for various user interactions
+    document.addEventListener('click', handleInteraction, { once: false });
+    document.addEventListener('touchstart', handleInteraction, { once: false });
+    document.addEventListener('keydown', handleInteraction, { once: false });
+
+    return () => {
+      document.removeEventListener('click', handleInteraction);
+      document.removeEventListener('touchstart', handleInteraction);
+      document.removeEventListener('keydown', handleInteraction);
+    };
+  }, [tryPlay]);
 
   return (
-    <audio 
-      ref={audioRef} 
-      src={src} 
-      loop 
-      style={{ display: 'none' }} 
+    <audio
+      ref={audioRef}
+      src={src}
+      loop
+      style={{ display: 'none' }}
     />
   );
 };

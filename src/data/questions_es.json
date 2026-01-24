@@ -1,0 +1,82 @@
+[
+  {
+    "id": "es_folklore_1",
+    "text": "¿Quién es el personaje legendario mexicano que robaba a los ricos para dar a los pobres?",
+    "options": ["El Zorro", "Pancho Villa", "El Chupacabra"],
+    "answer": "El Zorro",
+    "type": "choice",
+    "category": "Folklore"
+  },
+  {
+    "id": "es_folklore_2",
+    "text": "¿Qué criatura mítica de la cultura hispana se dice que llora por sus hijos?",
+    "options": ["La Llorona", "La Catrina", "La Malinche"],
+    "answer": "La Llorona",
+    "type": "choice",
+    "category": "Folklore"
+  },
+  {
+    "id": "es_geo_1",
+    "text": "¿Cuál es la capital de España?",
+    "options": ["Madrid", "Barcelona", "Sevilla"],
+    "answer": "Madrid",
+    "type": "choice",
+    "category": "Geografía"
+  },
+  {
+    "id": "es_geo_2",
+    "text": "¿En qué continente está Argentina?",
+    "options": ["América del Sur", "Europa", "África"],
+    "answer": "América del Sur",
+    "type": "choice",
+    "category": "Geografía"
+  },
+  {
+    "id": "es_history_1",
+    "text": "¿Qué civilización construyó Machu Picchu?",
+    "options": ["Los Incas", "Los Mayas", "Los Aztecas"],
+    "answer": "Los Incas",
+    "type": "choice",
+    "category": "Historia"
+  },
+  {
+    "id": "es_culture_1",
+    "text": "¿Qué baile es originario de España?",
+    "options": ["Flamenco", "Tango", "Salsa"],
+    "answer": "Flamenco",
+    "type": "choice",
+    "category": "Cultura"
+  },
+  {
+    "id": "es_myth_1",
+    "text": "¿Qué dios azteca era la serpiente emplumada?",
+    "options": ["Quetzalcóatl", "Huitzilopochtli", "Tlaloc"],
+    "answer": "Quetzalcóatl",
+    "type": "choice",
+    "category": "Mitología"
+  },
+  {
+    "id": "es_food_1",
+    "text": "¿De qué país es originaria la paella?",
+    "options": ["España", "México", "Argentina"],
+    "answer": "España",
+    "type": "choice",
+    "category": "Cultura"
+  },
+  {
+    "id": "es_science_1",
+    "text": "El agua hierve a 100 grados Celsius.",
+    "options": ["Verdadero", "Falso"],
+    "answer": "Verdadero",
+    "type": "boolean",
+    "category": "Ciencia"
+  },
+  {
+    "id": "es_social_1",
+    "text": "Ayudar a otros demuestra bondad.",
+    "options": ["Verdadero", "Falso"],
+    "answer": "Verdadero",
+    "type": "boolean",
+    "category": "Social"
+  }
+]

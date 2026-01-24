@@ -1,7 +1,17 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run build:*)"
+      "Bash(copy:*)",
+      "Read(//c/Projects/Combo/**)",
+      "Bash(npm run build:*)",
+      "Bash(git checkout:*)",
+      "Bash(xcopy:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(dir \"C:\\\\Projects\\\\ExtractPhylo\")",
+      "Bash(firebase deploy:*)"
+    ],
+    "additionalDirectories": [
+      "c:\\Projects\\gitJan17 recovery\\src"
     ]
   }
 }

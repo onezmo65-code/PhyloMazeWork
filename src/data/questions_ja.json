@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ja_folklore_1",
+    "text": "日本の伝説で、竹から生まれた女の子は誰？",
+    "options": ["かぐや姫", "白雪姫", "シンデレラ"],
+    "answer": "かぐや姫",
+    "type": "choice",
+    "category": "民話"
+  },
+  {
+    "id": "ja_folklore_2",
+    "text": "桃から生まれた男の子の名前は？",
+    "options": ["桃太郎", "金太郎", "浦島太郎"],
+    "answer": "桃太郎",
+    "type": "choice",
+    "category": "民話"
+  },
+  {
+    "id": "ja_geo_1",
+    "text": "日本の首都はどこ？",
+    "options": ["東京", "京都", "大阪"],
+    "answer": "東京",
+    "type": "choice",
+    "category": "地理"
+  },
+  {
+    "id": "ja_culture_1",
+    "text": "日本で一番高い山は？",
+    "options": ["富士山", "北岳", "槍ヶ岳"],
+    "answer": "富士山",
+    "type": "choice",
+    "category": "地理"
+  },
+  {
+    "id": "ja_history_1",
+    "text": "武士が使っていた刀の名前は？",
+    "options": ["刀（かたな）", "槍", "弓"],
+    "answer": "刀（かたな）",
+    "type": "choice",
+    "category": "歴史"
+  },
+  {
+    "id": "ja_food_1",
+    "text": "日本の伝統的なお米のお菓子は？",
+    "options": ["もち", "パン", "ケーキ"],
+    "answer": "もち",
+    "type": "choice",
+    "category": "文化"
+  },
+  {
+    "id": "ja_art_1",
+    "text": "日本の伝統的な紙を折る芸術は？",
+    "options": ["折り紙", "書道", "生け花"],
+    "answer": "折り紙",
+    "type": "choice",
+    "category": "文化"
+  },
+  {
+    "id": "ja_festival_1",
+    "text": "春に日本で人気の花見は何の花？",
+    "options": ["桜", "梅", "菊"],
+    "answer": "桜",
+    "type": "choice",
+    "category": "文化"
+  },
+  {
+    "id": "ja_science_1",
+    "text": "日本は島国である。",
+    "options": ["はい", "いいえ"],
+    "answer": "はい",
+    "type": "boolean",
+    "category": "地理"
+  },
+  {
+    "id": "ja_social_1",
+    "text": "他の人を助けることは良いことです。",
+    "options": ["はい", "いいえ"],
+    "answer": "はい",
+    "type": "boolean",
+    "category": "社会"
+  }
+]

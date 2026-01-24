@@ -498,45 +498,45 @@ const LandingShareButtons = () => {
   };
 
   return (
-    <div className="bg-white/50 p-1 md:p-1.5 rounded-xl border border-white/50 shadow-sm w-full">
-      <p className="text-slate-700 font-bold text-[9px] md:text-xs mb-0.5 text-center">{randomMessage}</p>
-      <div className="flex justify-center gap-0.5 md:gap-1 flex-wrap">
+    <div className="bg-white/50 p-2 rounded-xl border border-white/50 shadow-sm w-full">
+      <p className="text-slate-700 font-bold text-xs mb-2 text-center">{randomMessage}</p>
+      <div className="flex justify-center gap-1.5 flex-wrap">
         {/* Facebook */}
         <a href={shareLinks.facebook} target="_blank" rel="noopener noreferrer"
-          className="w-6 h-6 md:w-7 md:h-7 bg-blue-600 hover:bg-blue-500 rounded-full flex items-center justify-center transition-transform hover:scale-110">
-          <svg className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          className="w-8 h-8 bg-blue-600 hover:bg-blue-500 rounded-full flex items-center justify-center transition-transform hover:scale-110">
+          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
         {/* X/Twitter */}
         <a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer"
-          className="w-6 h-6 md:w-7 md:h-7 bg-black hover:bg-gray-800 rounded-full flex items-center justify-center transition-transform hover:scale-110">
-          <svg className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          className="w-8 h-8 bg-black hover:bg-gray-800 rounded-full flex items-center justify-center transition-transform hover:scale-110">
+          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
         {/* LinkedIn */}
         <a href={shareLinks.linkedin} target="_blank" rel="noopener noreferrer"
-          className="w-6 h-6 md:w-7 md:h-7 bg-blue-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition-transform hover:scale-110">
-          <svg className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          className="w-8 h-8 bg-blue-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition-transform hover:scale-110">
+          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
         {/* WhatsApp */}
         <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer"
-          className="w-6 h-6 md:w-7 md:h-7 bg-green-500 hover:bg-green-400 rounded-full flex items-center justify-center transition-transform hover:scale-110">
-          <svg className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          className="w-8 h-8 bg-green-500 hover:bg-green-400 rounded-full flex items-center justify-center transition-transform hover:scale-110">
+          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </a>
         {/* Telegram */}
         <a href={shareLinks.telegram} target="_blank" rel="noopener noreferrer"
-          className="w-6 h-6 md:w-7 md:h-7 bg-sky-500 hover:bg-sky-400 rounded-full flex items-center justify-center transition-transform hover:scale-110">
-          <svg className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          className="w-8 h-8 bg-sky-500 hover:bg-sky-400 rounded-full flex items-center justify-center transition-transform hover:scale-110">
+          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
         </a>
         {/* Copy Link */}
         <button onClick={copyToClipboard}
-          className={`w-6 h-6 md:w-7 md:h-7 ${copied ? 'bg-green-600' : 'bg-slate-600 hover:bg-slate-500'} rounded-full flex items-center justify-center transition-transform hover:scale-110`}>
+          className={`w-8 h-8 ${copied ? 'bg-green-600' : 'bg-slate-600 hover:bg-slate-500'} rounded-full flex items-center justify-center transition-transform hover:scale-110`}>
           {copied ? (
-            <svg className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
           ) : (
-            <svg className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
+            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
           )}
         </button>
       </div>
-      {copied && <p className="text-green-500 text-[8px] text-center mt-0.5">Link copied!</p>}
+      {copied && <p className="text-green-500 text-[10px] text-center mt-1">Link copied!</p>}
     </div>
   );
 };
@@ -617,24 +617,35 @@ const Launcher = ({
 
   return (
     <div
-      className="absolute inset-0 z-40 flex flex-col items-center justify-center px-1 py-0.5 md:px-2 md:py-1 animate-in fade-in overflow-hidden"
+      className="absolute inset-0 z-40 flex flex-col items-center justify-center px-4 py-2 animate-in fade-in overflow-hidden"
       style={{
         backgroundColor: "#add8e6" // Light Blue
       }}>
-      <div className="max-w-lg w-full space-y-0.5 md:space-y-1.5 text-center">
-        {/* Title with integrated date - ultra compact for portrait */}
-        <h1 className="text-base md:text-xl font-black text-slate-900 leading-tight">
-          {t('title', language)}
-        </h1>
-        <p className="text-cyan-700 font-black text-[10px] md:text-sm tracking-wide leading-none">{t('subtitle', language)}<span className="text-slate-500 font-normal text-[8px] md:text-[10px] ml-1 hidden md:inline">{utcDate}</span></p>
+      <div className="max-w-md w-full space-y-2 text-center">
+        {/* UTC Date Display */}
+        <div className="bg-slate-800 text-white px-4 py-1.5 rounded-lg shadow-lg mb-1">
+          <p className="text-xs font-semibold tracking-wide">{utcDate}</p>
+          <p className="text-[8px] text-slate-400 uppercase tracking-widest">UTC Time</p>
+        </div>
 
-        {/* Language Selector - ultra compact for portrait */}
-        <div className="flex justify-center gap-0.5 flex-wrap py-0.5">
+        <div>
+          <h1
+            className="text-xl font-black mb-0.5 text-slate-900"
+            style={{
+              // Removed inline color to use Tailwind class for better contrast
+            }}>
+            {t('title', language)}
+          </h1>
+          <p className="text-cyan-700 font-black text-sm tracking-wide">{t('subtitle', language)}</p>
+        </div>
+
+        {/* Language Selector */}
+        <div className="flex justify-center gap-1 flex-wrap">
           {LANGUAGES.map((lang) => (
             <button
               key={lang.code}
               onClick={() => setLanguage(lang.code)}
-              className={`px-1 py-0.5 md:px-2 md:py-1 rounded text-[9px] md:text-xs font-medium transition-all
+              className={`px-2 py-1 rounded text-xs font-medium transition-all
                 ${language === lang.code
                   ? 'bg-cyan-600 text-white shadow-md'
                   : 'bg-white/60 text-slate-600 hover:bg-white/80'}`}
@@ -645,39 +656,43 @@ const Launcher = ({
           ))}
         </div>
 
+
+
         <div
-          className="bg-white/80 backdrop-blur-sm p-1.5 md:p-3 rounded-xl border border-white/50 space-y-1 md:space-y-2 shadow-xl"
+          className="bg-white/80 backdrop-blur-sm p-2 rounded-2xl border border-white/50 space-y-2 shadow-xl"
         >
           {/* Difficulty Selector */}
-          <div className="grid grid-cols-3 gap-0.5 md:gap-1.5">
-            {(['easy', 'hard', 'tough_genius'] as const).map((d) => (
-              <button
-                key={d}
-                onClick={() => setDifficulty(d)}
-                className={`py-0.5 md:py-1.5 px-0.5 md:px-1.5 rounded-lg text-[9px] md:text-xs font-bold capitalize transition-all
-                  ${difficulty === d
-                    ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-900/20'
-                    : 'bg-slate-200 text-slate-600 hover:bg-slate-300'}`}
-              >
-                {d === 'easy' ? t('easy', language) : d === 'hard' ? t('hard', language) : t('toughGenius', language)}
-              </button>
-            ))}
+          <div className="space-y-0.5">
+            <div className="grid grid-cols-3 gap-1.5">
+              {(['easy', 'hard', 'tough_genius'] as const).map((d) => (
+                <button
+                  key={d}
+                  onClick={() => setDifficulty(d)}
+                  className={`py-1 px-1 rounded-lg text-[11px] font-bold capitalize transition-all
+                    ${difficulty === d
+                      ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-900/20'
+                      : 'bg-slate-200 text-slate-600 hover:bg-slate-300'}`}
+                >
+                  {d === 'easy' ? t('easy', language) : d === 'hard' ? t('hard', language) : t('toughGenius', language)}
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* Icon Selector - ultra compact for portrait */}
-          <div className="flex items-center justify-center gap-1">
-            <label className="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase">{t('explorerIcon', language)}</label>
-            <div className="flex justify-center gap-0.5 md:gap-1.5">
+          {/* Icon Selector */}
+          <div className="space-y-0.5">
+            <label className="text-[9px] font-bold text-slate-500 uppercase tracking-wider">{t('explorerIcon', language)}</label>
+            <div className="flex justify-center gap-1.5">
               {(['boy', 'girl', 'cat', 'dog', 'car'] as const).map((icon) => (
                 <button
                   key={icon}
                   onClick={() => setPlayerIcon(icon)}
-                  className={`p-0.5 md:p-1 rounded-lg transition-all border-2
+                  className={`p-1 rounded-xl transition-all border-2
                     ${playerIcon === icon
                       ? 'border-cyan-500 bg-cyan-500/10 scale-110'
                       : 'border-transparent hover:bg-slate-200'}`}
                 >
-                  <PlayerAvatar type={icon} className="w-5 h-5 md:w-8 md:h-8" />
+                  <PlayerAvatar type={icon} className="w-7 h-7" />
                 </button>
               ))}
             </div>
@@ -685,30 +700,30 @@ const Launcher = ({
 
           <button
             onClick={onStart}
-            className="w-full py-1.5 md:py-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl font-black text-xs md:text-base shadow-xl shadow-cyan-900/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] flex flex-col items-center justify-center gap-0 animate-pulse"
+            className="w-full py-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl font-black text-base shadow-xl shadow-cyan-900/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] flex flex-col items-center justify-center gap-1 animate-pulse"
           >
-            <div className="flex items-center gap-1.5">
-              <Play className="w-3.5 h-3.5 md:w-5 md:h-5 fill-current" />
+            <div className="flex items-center gap-2">
+              <Play className="w-5 h-5 fill-current" />
               <span>{t('startAdventure', language)}</span>
             </div>
-            <span className="text-[8px] md:text-[10px] font-normal opacity-80">{t('pressToBegin', language)}</span>
+            <span className="text-[10px] font-normal opacity-80">{t('pressToBegin', language)}</span>
           </button>
 
-          {/* How to Play - inline ultra compact for portrait */}
-          <div className="bg-white/70 rounded px-1 py-0.5 md:px-3 md:py-1.5 border border-slate-200 flex items-center justify-center gap-1 md:gap-3">
-            <p className="text-[8px] md:text-[10px] font-bold text-slate-600 uppercase">{t('howToPlay', language)}</p>
-            <div className="flex items-center gap-0.5 text-slate-700">
-              <span className="text-xs md:text-base">⬆️</span>
-              <span className="text-xs md:text-base">⬇️</span>
-              <span className="text-xs md:text-base">⬅️</span>
-              <span className="text-xs md:text-base">➡️</span>
+          {/* How to Play */}
+          <div className="bg-white/70 rounded-lg p-2 border border-slate-200">
+            <p className="text-[10px] font-bold text-slate-600 uppercase mb-1 text-center">{t('howToPlay', language)}</p>
+            <div className="flex items-center justify-center gap-1 text-slate-700">
+              <span className="text-lg">⬆️</span>
+              <span className="text-lg">⬇️</span>
+              <span className="text-lg">⬅️</span>
+              <span className="text-lg">➡️</span>
             </div>
-            <p className="text-[7px] md:text-[9px] text-slate-500 hidden md:block">{t('howToPlayDesc', language)}</p>
+            <p className="text-[9px] text-slate-600 text-center mt-1">{t('howToPlayDesc', language)}</p>
           </div>
 
           <button
             onClick={onReset}
-            className="w-full py-0 text-slate-400 hover:text-slate-600 text-[7px] md:text-[9px] font-medium uppercase tracking-widest transition-colors"
+            className="w-full py-1 text-slate-400 hover:text-slate-600 text-[8px] font-medium uppercase tracking-widest transition-colors"
           >
             {t('resetProgress', language)}
           </button>
@@ -717,27 +732,27 @@ const Launcher = ({
         {/* Share Buttons */}
         <LandingShareButtons />
 
-        {/* Commercial/Advert Link Area - ultra compact for portrait */}
-        <div className="bg-white/50 p-1 md:p-2 rounded-xl border border-white/50 shadow-sm w-full">
-          <div className="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase mb-0.5">{t('sponsored', language)}</div>
+        {/* Commercial/Advert Link Area - Moved to Base */}
+        <div className="bg-white/50 p-1.5 rounded-xl border border-white/50 shadow-sm w-full">
+          <div className="text-[10px] font-bold text-slate-500 uppercase mb-1">{t('sponsored', language)}</div>
 
           {/* PSA Message - Above Currency */}
-          <div className="bg-gradient-to-r from-slate-800 to-slate-700 rounded px-1.5 py-1 md:px-3 md:py-2 mb-0.5 transition-all duration-500">
-            <div className="flex items-center justify-center gap-1 md:gap-2">
-              <span className="text-sm md:text-lg">{PSA_MESSAGES[psaIndex].icon}</span>
-              <p className="text-[9px] md:text-xs font-bold text-white text-center">
+          <div className="bg-gradient-to-r from-slate-800 to-slate-700 rounded-lg p-2 mb-1.5 transition-all duration-500">
+            <div className="flex items-center justify-center gap-2">
+              <span className="text-lg">{PSA_MESSAGES[psaIndex].icon}</span>
+              <p className={`text-xs font-bold text-white text-center`}>
                 {PSA_MESSAGES[psaIndex].text}
               </p>
             </div>
           </div>
 
-          {/* Currency Notes - ultra compact for portrait */}
-          <div className="grid grid-cols-2 gap-0.5 md:gap-1.5">
+          {/* Currency Notes */}
+          <div className="grid grid-cols-2 gap-1.5">
             {CURRENCY_IMAGES.slice(0, 2).map((img, i) => (
-              <div key={i} className="rounded overflow-hidden bg-slate-200 relative group h-12 md:h-auto md:aspect-video" style={{ maxHeight: '80px' }}>
+              <div key={i} className="aspect-video rounded-lg overflow-hidden bg-slate-200 relative group">
                 <img src={img} alt="Currency" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                  <span className="opacity-0 group-hover:opacity-100 bg-white/90 px-1 py-0.5 rounded text-[8px] md:text-[10px] font-bold text-slate-800 shadow-sm">
+                  <span className="opacity-0 group-hover:opacity-100 bg-white/90 px-1.5 py-0.5 rounded text-[10px] font-bold text-slate-800 shadow-sm">
                     View Offer
                   </span>
                 </div>
@@ -745,7 +760,7 @@ const Launcher = ({
             ))}
           </div>
 
-          <a href="#" className="block mt-0.5 text-[8px] md:text-[10px] text-blue-600 hover:underline font-medium">
+          <a href="#" className="block mt-1 text-[10px] text-blue-600 hover:underline font-medium">
             {t('visitPartners', language)}
           </a>
         </div>
@@ -1579,10 +1594,10 @@ export const MazeGame: React.FC = () => {
   return (
     <div className="flex flex-col h-screen bg-slate-950 text-slate-200 font-sans selection:bg-cyan-500/30">
       {/* SCROLLING BANNER */}
-      <div className="h-7 bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-900 border-b border-cyan-500/30 overflow-hidden relative z-30">
-        <div className="absolute whitespace-nowrap animate-scroll-left text-white text-xs font-bold tracking-wider flex items-center h-full">
-          {/* First copy - extended phrases for continuous scroll */}
-          <span className="inline-flex items-center gap-3 px-2">
+      <div className="h-8 bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-900 border-b border-cyan-500/30 overflow-hidden relative z-30">
+        <div className="absolute whitespace-nowrap animate-scroll-left text-white text-sm font-bold tracking-wider flex items-center h-full">
+          {/* First copy */}
+          <span className="inline-flex items-center gap-4 px-4">
             <span className="text-cyan-300">NEBULA MAZE</span>
             <span className="text-purple-300">•</span>
             <span className="text-cyan-300">Fog of War</span>
@@ -1591,16 +1606,6 @@ export const MazeGame: React.FC = () => {
             <span className="text-purple-300">•</span>
             <span className="text-cyan-300">Trivia</span>
             <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">IQ Tune-Up</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Game & Learn</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Adventure</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Common Sense</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Productive Gaming</span>
-            <span className="text-purple-300">•</span>
             <span className="text-cyan-300">NEBULA MAZE</span>
             <span className="text-purple-300">•</span>
             <span className="text-cyan-300">Fog of War</span>
@@ -1608,20 +1613,10 @@ export const MazeGame: React.FC = () => {
             <span className="text-cyan-300">Survival</span>
             <span className="text-purple-300">•</span>
             <span className="text-cyan-300">Trivia</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">IQ Tune-Up</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Game & Learn</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Adventure</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Common Sense</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Productive Gaming</span>
             <span className="text-purple-300">•</span>
           </span>
           {/* Second copy (identical for seamless loop) */}
-          <span className="inline-flex items-center gap-3 px-2">
+          <span className="inline-flex items-center gap-4 px-4">
             <span className="text-cyan-300">NEBULA MAZE</span>
             <span className="text-purple-300">•</span>
             <span className="text-cyan-300">Fog of War</span>
@@ -1630,16 +1625,6 @@ export const MazeGame: React.FC = () => {
             <span className="text-purple-300">•</span>
             <span className="text-cyan-300">Trivia</span>
             <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">IQ Tune-Up</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Game & Learn</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Adventure</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Common Sense</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Productive Gaming</span>
-            <span className="text-purple-300">•</span>
             <span className="text-cyan-300">NEBULA MAZE</span>
             <span className="text-purple-300">•</span>
             <span className="text-cyan-300">Fog of War</span>
@@ -1647,16 +1632,6 @@ export const MazeGame: React.FC = () => {
             <span className="text-cyan-300">Survival</span>
             <span className="text-purple-300">•</span>
             <span className="text-cyan-300">Trivia</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">IQ Tune-Up</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Game & Learn</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Adventure</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Common Sense</span>
-            <span className="text-purple-300">•</span>
-            <span className="text-cyan-300">Productive Gaming</span>
             <span className="text-purple-300">•</span>
           </span>
         </div>
@@ -1869,60 +1844,99 @@ export const MazeGame: React.FC = () => {
             </div>
           </div>
 
-          {/* Landscape Layout: Controls + Maze + Dashboard - ENABLED */}
-          <div className="hidden md:flex items-center justify-center gap-2 flex-1 min-h-0 px-2">
-            {/* LEFT Side in Landscape: Controls OR Dashboard */}
+          {/* Landscape Layout: Dashboard + Maze + Controls - ENABLED */}
+          <div className="hidden md:flex items-center justify-center gap-1 flex-1 min-h-0 px-1 pl-20">
+            {/* LEFT Side in Landscape: Controls (NEWS Cardinal Layout) */}
             {landscapeControlsPosition === 'left' ? (
-              <div className="flex flex-col gap-2 items-center justify-center flex-shrink-0">
+              <div className="flex flex-col gap-3 items-center justify-center">
                 {/* Position Toggle */}
                 <button
                   onClick={() => setLandscapeControlsPosition('right')}
-                  className="text-sm bg-slate-800/90 border border-slate-600 rounded px-3 py-1.5 text-white hover:bg-slate-700 mb-1"
+                  className="text-sm bg-slate-800/90 border border-slate-600 rounded px-3 py-1.5 text-white hover:bg-slate-700 mb-3"
                   title="Move controls to right side"
                 >
                   ⇄
                 </button>
                 {/* Controls - NEWS Cardinal Layout */}
-                <div className="grid grid-cols-3 gap-1.5">
+                <div className="grid grid-cols-3 gap-2">
+                  {/* Empty top-left */}
                   <div></div>
-                  <button onClick={() => handleManualMove(0, -1)} className="w-16 h-16 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-2xl shadow-lg transition-all active:scale-95" aria-label="Move Up">⬆️</button>
+                  {/* North */}
+                  <button
+                    onClick={() => handleManualMove(0, -1)}
+                    className="w-20 h-20 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-3xl shadow-lg transition-all active:scale-95"
+                    aria-label="Move Up"
+                  >
+                    ⬆️
+                  </button>
+                  {/* Empty top-right */}
                   <div></div>
-                  <button onClick={() => handleManualMove(-1, 0)} className="w-16 h-16 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-2xl shadow-lg transition-all active:scale-95" aria-label="Move Left">⬅️</button>
+                  {/* West */}
+                  <button
+                    onClick={() => handleManualMove(-1, 0)}
+                    className="w-20 h-20 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-3xl shadow-lg transition-all active:scale-95"
+                    aria-label="Move Left"
+                  >
+                    ⬅️
+                  </button>
+                  {/* Empty center */}
                   <div></div>
-                  <button onClick={() => handleManualMove(1, 0)} className="w-16 h-16 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-2xl shadow-lg transition-all active:scale-95" aria-label="Move Right">➡️</button>
+                  {/* East */}
+                  <button
+                    onClick={() => handleManualMove(1, 0)}
+                    className="w-20 h-20 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-3xl shadow-lg transition-all active:scale-95"
+                    aria-label="Move Right"
+                  >
+                    ➡️
+                  </button>
+                  {/* Empty bottom-left */}
                   <div></div>
-                  <button onClick={() => handleManualMove(0, 1)} className="w-16 h-16 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-2xl shadow-lg transition-all active:scale-95" aria-label="Move Down">⬇️</button>
+                  {/* South */}
+                  <button
+                    onClick={() => handleManualMove(0, 1)}
+                    className="w-20 h-20 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-3xl shadow-lg transition-all active:scale-95"
+                    aria-label="Move Down"
+                  >
+                    ⬇️
+                  </button>
+                  {/* Empty bottom-right */}
                   <div></div>
                 </div>
               </div>
             ) : (
-              /* Dashboard on LEFT when controls are on RIGHT */
-              <div className="bg-lime-200 border border-lime-300 p-2 rounded flex flex-col gap-1 w-[200px] flex-shrink-0">
-                <div className="flex gap-1">
-                  <button onClick={() => setShowLeaderboard(true)} className="w-[92px] h-[40px] bg-slate-800/90 hover:bg-slate-700 rounded transition-colors border border-slate-600 flex items-center justify-center">
-                    <Trophy className="w-5 h-5 text-yellow-400" />
+              // Dashboard on LEFT when controls are on RIGHT (COMPACT)
+              <div className="bg-lime-200 border border-lime-300 p-3 rounded flex flex-col gap-2 w-[320px]">
+                <div className="flex gap-2">
+                  <button onClick={() => setShowLeaderboard(true)} className="w-[150px] h-[80px] bg-slate-800/90 hover:bg-slate-700 rounded transition-colors border border-slate-600 flex items-center justify-center">
+                    <Trophy className="w-10 h-10 text-yellow-400" />
                   </button>
-                  <button onClick={() => setShowOperator(true)} className="w-[92px] h-[40px] bg-slate-800/90 hover:bg-slate-700 rounded transition-colors border border-slate-600 flex items-center justify-center">
-                    <Settings className="w-5 h-5 text-cyan-400" />
+                  <button onClick={() => setShowOperator(true)} className="w-[150px] h-[80px] bg-slate-800/90 hover:bg-slate-700 rounded transition-colors border border-slate-600 flex items-center justify-center">
+                    <Settings className="w-10 h-10 text-cyan-400" />
                   </button>
                 </div>
-                <div className="flex gap-1">
-                  <div className="w-[92px] h-[45px] bg-green-700/90 rounded border border-green-600 flex flex-col items-center justify-center">
-                    <div className="text-[10px] text-white uppercase font-bold leading-none mb-0.5">SCORE</div>
-                    <div className="text-base font-mono font-bold text-yellow-300 leading-none">{score}</div>
+                <div className="flex gap-2">
+                  <div className="w-[150px] h-[90px] bg-green-700/90 rounded border border-green-600 flex flex-col items-center justify-center">
+                    <div className="text-sm text-white uppercase font-bold leading-none mb-2">SCORE</div>
+                    <div className="text-2xl font-mono font-bold text-yellow-300 leading-none">{score}</div>
                   </div>
-                  <div className="w-[92px] h-[45px] bg-slate-800/90 rounded border border-slate-600 flex flex-col items-center justify-center">
-                    <div className="text-[10px] text-white uppercase font-bold leading-none mb-0.5">HEALTH</div>
-                    <div className={`text-base font-mono font-bold ${hp > 50 ? 'text-green-400' : 'text-red-400'} leading-none`}>{hp}%</div>
+                  <div className="w-[150px] h-[90px] bg-slate-800/90 rounded border border-slate-600 flex flex-col items-center justify-center">
+                    <div className="text-sm text-white uppercase font-bold leading-none mb-2">HEALTH</div>
+                    <div className={`text-2xl font-mono font-bold ${hp > 50 ? 'text-green-400' : 'text-red-400'} leading-none`}>{hp}%</div>
                   </div>
                 </div>
-                <div className="text-[10px] font-bold text-slate-800 uppercase text-center leading-none">INVENTORY</div>
-                <div className="grid grid-cols-4 gap-0.5">
-                  {Array.from({ length: 12 }).map((_, i) => {
+                <div className="text-base font-bold text-slate-800 uppercase text-center leading-none">
+                  INVENTORY
+                </div>
+                <div className="grid grid-cols-4 gap-2">
+                  {Array.from({ length: 16 }).map((_, i) => {
                     const item = bag[i];
                     return (
-                      <div key={i} className={`w-[44px] h-[44px] rounded border ${item ? 'bg-slate-700/90 border-slate-600' : 'bg-slate-300/50 border-slate-400/50'} flex items-center justify-center`} title={item ? ITEMS_CONFIG[item]?.name : 'Empty'}>
-                        {item && <span className="text-lg">{ITEMS_CONFIG[item]?.char}</span>}
+                      <div
+                        key={i}
+                        className={`w-[70px] h-[70px] rounded border ${item ? 'bg-slate-700/90 border-slate-600' : 'bg-slate-300/50 border-slate-400/50'} flex items-center justify-center`}
+                        title={item ? ITEMS_CONFIG[item]?.name : 'Empty'}
+                      >
+                        {item && <span className="text-2xl">{ITEMS_CONFIG[item]?.char}</span>}
                       </div>
                     );
                   })}
@@ -1930,12 +1944,12 @@ export const MazeGame: React.FC = () => {
               </div>
             )}
 
-            {/* Maze Grid - Landscape CENTER (Maximized Size - takes available space) */}
+            {/* Maze Grid - Landscape (Maximized Size) */}
             <div
-              className="relative bg-slate-900/80 backdrop-blur-sm rounded-lg shadow-2xl overflow-hidden border border-slate-800"
+              className="relative bg-slate-900/80 backdrop-blur-sm rounded-lg shadow-2xl overflow-hidden border border-slate-800 flex-1"
               style={{
-                width: 'min(70vw, calc(100vh - 60px), 800px)',
-                height: 'min(70vw, calc(100vh - 60px), 800px)',
+                width: 'min(90vw, calc(100vh - 70px), 1100px)',
+                height: 'min(90vw, calc(100vh - 70px), 1100px)',
                 aspectRatio: '1 / 1',
                 backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
                 backgroundSize: 'cover',
@@ -2007,58 +2021,97 @@ export const MazeGame: React.FC = () => {
             </div>
           </div>
 
-            {/* RIGHT Side in Landscape: Dashboard OR Controls */}
+            {/* RIGHT Side in Landscape: Dashboard OR Controls depending on position */}
             {landscapeControlsPosition === 'right' ? (
-              <div className="flex flex-col gap-2 items-center justify-center flex-shrink-0">
+              <div className="flex flex-col gap-1.5 items-center justify-center">
                 {/* Position Toggle */}
                 <button
                   onClick={() => setLandscapeControlsPosition('left')}
-                  className="text-sm bg-slate-800/90 border border-slate-600 rounded px-3 py-1.5 text-white hover:bg-slate-700 mb-1"
+                  className="text-sm bg-slate-900/90 border border-slate-600 rounded px-3 py-1.5 text-white hover:bg-slate-700 mb-3"
                   title="Move controls to left side"
                 >
                   ⇄
                 </button>
                 {/* Controls - NEWS Cardinal Layout */}
-                <div className="grid grid-cols-3 gap-1.5">
+                <div className="grid grid-cols-3 gap-2">
+                  {/* Empty top-left */}
                   <div></div>
-                  <button onClick={() => handleManualMove(0, -1)} className="w-16 h-16 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-2xl shadow-lg transition-all active:scale-95" aria-label="Move Up">⬆️</button>
+                  {/* North */}
+                  <button
+                    onClick={() => handleManualMove(0, -1)}
+                    className="w-20 h-20 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-3xl shadow-lg transition-all active:scale-95"
+                    aria-label="Move Up"
+                  >
+                    ⬆️
+                  </button>
+                  {/* Empty top-right */}
                   <div></div>
-                  <button onClick={() => handleManualMove(-1, 0)} className="w-16 h-16 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-2xl shadow-lg transition-all active:scale-95" aria-label="Move Left">⬅️</button>
+                  {/* West */}
+                  <button
+                    onClick={() => handleManualMove(-1, 0)}
+                    className="w-20 h-20 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-3xl shadow-lg transition-all active:scale-95"
+                    aria-label="Move Left"
+                  >
+                    ⬅️
+                  </button>
+                  {/* Empty center */}
                   <div></div>
-                  <button onClick={() => handleManualMove(1, 0)} className="w-16 h-16 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-2xl shadow-lg transition-all active:scale-95" aria-label="Move Right">➡️</button>
+                  {/* East */}
+                  <button
+                    onClick={() => handleManualMove(1, 0)}
+                    className="w-20 h-20 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-3xl shadow-lg transition-all active:scale-95"
+                    aria-label="Move Right"
+                  >
+                    ➡️
+                  </button>
+                  {/* Empty bottom-left */}
                   <div></div>
-                  <button onClick={() => handleManualMove(0, 1)} className="w-16 h-16 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-2xl shadow-lg transition-all active:scale-95" aria-label="Move Down">⬇️</button>
+                  {/* South */}
+                  <button
+                    onClick={() => handleManualMove(0, 1)}
+                    className="w-20 h-20 bg-slate-800/90 border-2 border-slate-600 rounded hover:bg-slate-700 active:bg-slate-600 flex items-center justify-center text-3xl shadow-lg transition-all active:scale-95"
+                    aria-label="Move Down"
+                  >
+                    ⬇️
+                  </button>
+                  {/* Empty bottom-right */}
                   <div></div>
                 </div>
               </div>
             ) : (
-              /* Dashboard on RIGHT when controls are on LEFT */
-              <div className="bg-lime-200 border border-lime-300 p-2 rounded flex flex-col gap-1 w-[200px] flex-shrink-0">
-                <div className="flex gap-1">
-                  <button onClick={() => setShowLeaderboard(true)} className="w-[92px] h-[40px] bg-slate-800/90 hover:bg-slate-700 rounded transition-colors border border-slate-600 flex items-center justify-center">
-                    <Trophy className="w-5 h-5 text-yellow-400" />
+              // Dashboard on RIGHT when controls are on LEFT (COMPACT)
+              <div className="bg-lime-200 border border-lime-300 p-3 rounded flex flex-col gap-2 w-[320px]">
+                <div className="flex gap-2">
+                  <button onClick={() => setShowLeaderboard(true)} className="w-[150px] h-[80px] bg-slate-800/90 hover:bg-slate-700 rounded transition-colors border border-slate-600 flex items-center justify-center">
+                    <Trophy className="w-10 h-10 text-yellow-400" />
                   </button>
-                  <button onClick={() => setShowOperator(true)} className="w-[92px] h-[40px] bg-slate-800/90 hover:bg-slate-700 rounded transition-colors border border-slate-600 flex items-center justify-center">
-                    <Settings className="w-5 h-5 text-cyan-400" />
+                  <button onClick={() => setShowOperator(true)} className="w-[150px] h-[80px] bg-slate-800/90 hover:bg-slate-700 rounded transition-colors border border-slate-600 flex items-center justify-center">
+                    <Settings className="w-10 h-10 text-cyan-400" />
                   </button>
                 </div>
-                <div className="flex gap-1">
-                  <div className="w-[92px] h-[45px] bg-green-700/90 rounded border border-green-600 flex flex-col items-center justify-center">
-                    <div className="text-[10px] text-white uppercase font-bold leading-none mb-0.5">SCORE</div>
-                    <div className="text-base font-mono font-bold text-yellow-300 leading-none">{score}</div>
+                <div className="flex gap-2">
+                  <div className="w-[150px] h-[90px] bg-green-700/90 rounded border border-green-600 flex flex-col items-center justify-center">
+                    <div className="text-sm text-white uppercase font-bold leading-none mb-2">SCORE</div>
+                    <div className="text-2xl font-mono font-bold text-yellow-300 leading-none">{score}</div>
                   </div>
-                  <div className="w-[92px] h-[45px] bg-slate-800/90 rounded border border-slate-600 flex flex-col items-center justify-center">
-                    <div className="text-[10px] text-white uppercase font-bold leading-none mb-0.5">HEALTH</div>
-                    <div className={`text-base font-mono font-bold ${hp > 50 ? 'text-green-400' : 'text-red-400'} leading-none`}>{hp}%</div>
+                  <div className="w-[150px] h-[90px] bg-slate-800/90 rounded border border-slate-600 flex flex-col items-center justify-center">
+                    <div className="text-sm text-white uppercase font-bold leading-none mb-2">HEALTH</div>
+                    <div className={`text-2xl font-mono font-bold ${hp > 50 ? 'text-green-400' : 'text-red-400'} leading-none`}>{hp}%</div>
                   </div>
                 </div>
-                <div className="text-[10px] font-bold text-slate-800 uppercase text-center leading-none">INVENTORY</div>
-                <div className="grid grid-cols-4 gap-0.5">
-                  {Array.from({ length: 12 }).map((_, i) => {
+                <div className="text-base font-bold text-slate-800 uppercase text-center leading-none">
+                  INVENTORY
+                </div>
+                <div className="grid grid-cols-4 gap-2">
+                  {Array.from({ length: 16 }).map((_, i) => {
                     const item = bag[i];
                     return (
-                      <div key={i} className={`w-[44px] h-[44px] rounded border ${item ? 'bg-slate-700/90 border-slate-600' : 'bg-slate-300/50 border-slate-400/50'} flex items-center justify-center`} title={item ? ITEMS_CONFIG[item]?.name : 'Empty'}>
-                        {item && <span className="text-lg">{ITEMS_CONFIG[item]?.char}</span>}
+                      <div
+                        key={i}
+                        className={`w-[70px] h-[70px] rounded border ${item ? 'bg-slate-700/90 border-slate-600' : 'bg-slate-300/50 border-slate-400/50'} flex items-center justify-center`}
+                        title={item ? ITEMS_CONFIG[item]?.name : 'Empty'}
+                      >
+                        {item && <span className="text-2xl">{ITEMS_CONFIG[item]?.char}</span>}
                       </div>
                     );
                   })}
