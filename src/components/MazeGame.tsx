@@ -78,6 +78,7 @@ const ITEMS_CONFIG = {
   [ItemType.GameMeat]: { char: '🍖', color: 'text-orange-700', name: 'Game Meat' },
   [ItemType.Syringe]: { char: '💉', color: 'text-slate-200', name: 'Syringe' },
   [ItemType.PoisonBerries]: { char: '🫐', color: 'text-purple-800', name: 'Poison Berries' },
+  [ItemType.GasMask]: { char: '😷', color: 'text-emerald-600', name: 'Gas Mask' },
 };
 
 const SCENERY_IMAGES = [
@@ -803,6 +804,7 @@ export const MazeGame: React.FC = () => {
   const [playerName, setPlayerName] = useState('');
   const [isNewHighScore, setIsNewHighScore] = useState(false);
   const [encounteredHazards, setEncounteredHazards] = useState<string[]>([]);
+  const [seenQuestions, setSeenQuestions] = useState<string[]>([]);
 
   // Monetization & Settings State
   const [runCount, setRunCount] = useState(0);
@@ -850,7 +852,11 @@ export const MazeGame: React.FC = () => {
     const init = async () => {
       await registry.load(language);
       // Add academic questions to registry
-      academicQuestions.forEach(q => registry.add(q as Question));
+      academicQuestions.forEach(q => {
+        // Default to 'medium' difficulty if missing, to ensure they fit in the tier system
+        const qWithDiff = { ...q, difficulty: q.difficulty || 'medium' };
+        registry.add(qWithDiff as Question);
+      });
     };
     init();
 
@@ -876,31 +882,23 @@ export const MazeGame: React.FC = () => {
     }
   }, []);
 
-  const checkAndStartLevel = (lvl: number) => {
-    // Paywall Logic: Check if we should show paywall (After Game 3+)
-    // Note: runCount is incremented only in handleLauncherStart (new game sessions)
-    // This function handles level progression within the same game session
-    // CRITICAL: First 2 games (runCount 1 and 2) are ALWAYS FREE - no paywall, no ads
+  const checkAndStartLevel = (newLevel: number) => {
+    setLevel(newLevel); // Update the level state
+    setAdWatched(false); // Reset ad status for the new level
     
-    // Ensure level doesn't exceed config
-    if (!LEVEL_CONFIG[lvl] && lvl > 8) {
-        // Loop back or end game? Let's loop to level 1 but keep score
-        // Or just stay at max level
-        // For now, let's allow it to proceed to next level if config exists, else loop
-    }
-
-    if (!isPremium && !adWatched && lvl >= 2) {
-      setShowPaywall(true);
-      return;
-    }
-
-    // Consume Ad if used (only for game 3+)
-    if (adWatched && runCount >= 3) setAdWatched(false);
-
-    startLevel(lvl);
+    // This is the part that generates the new maze
+    // Ensure it sets playerPos back to {x: 0, y: 0} or your startPos!
+    startLevel(newLevel); 
   };
 
   const handleLauncherStart = () => {
+    // 1. GATEKEEPER: Check if they have reached the limit (2 free games)
+    // If runCount is 2 or more, and they haven't paid or watched an ad, BLOCK THEM
+    if (runCount >= 2 && !isPremium && !adWatched) {
+      setShowPaywall(true);
+      return; // Stop here!
+    }
+
     crazyGames.gameplayStart();
     // Resume Audio Context on user interaction
     const ctx = getAudioContext();
@@ -908,23 +906,18 @@ export const MazeGame: React.FC = () => {
       ctx.resume();
     }
 
-    // CRITICAL: First 2 games are FREE
-    // runCount 0 -> increment to 1 -> Game 1 (FREE)
-    // runCount 1 -> increment to 2 -> Game 2 (FREE)
-    // runCount 2 -> Show Paywall -> Game 3+ (REQUIRES AD/SUBSCRIPTION)
+    // Increment and save the run
+    setRunCount(c => {
+      const newCount = c + 1;
+      localStorage.setItem('runCount', newCount.toString());
+      return newCount;
+    });
 
-      // User is on game 1 or 2, or has unlocked via ad/subscription
-      setRunCount(c => {
-        const newCount = c + 1;
-        localStorage.setItem('runCount', newCount.toString());
-        return newCount;
-      });
+    // Reset ad flag for the current level
+    if (adWatched) setAdWatched(false);
 
-      // Consume Ad if used
-      if (adWatched) setAdWatched(false);
-
-      startLevel(1);
-      setShowLauncher(false);
+    startLevel(1);
+    setShowLauncher(false);
   };
 
   const handleReset = () => {
@@ -1049,6 +1042,42 @@ export const MazeGame: React.FC = () => {
     setMessageLog(prev => [msg, ...prev].slice(0, 50));
   };
 
+  // --- SMART QUESTION SELECTION ---
+  const getTieredQuestion = (currentLevel: number): Question | null => {
+    // 1. Determine Target Difficulty based on Level
+    let targetDifficulty = 'easy';
+    if (currentLevel >= 3) targetDifficulty = 'medium';
+    if (currentLevel >= 6) targetDifficulty = 'hard';
+
+    let candidate: Question | null = null;
+    let bestBackup: Question | null = null;
+
+    // 2. Attempt to find a perfect match (Unseen + Correct Difficulty)
+    // We sample up to 20 times to find a non-repeating question
+    for (let i = 0; i < 20; i++) {
+      candidate = registry.getRandom();
+      if (!candidate) continue;
+
+      // Skip if we've already seen this question
+      if (seenQuestions.includes(candidate.id)) continue;
+
+      // Perfect Match: Unseen AND Correct Difficulty
+      if (candidate.difficulty === targetDifficulty) {
+        return candidate;
+      }
+
+      // Backup: Unseen but wrong difficulty (better than a repeat)
+      if (!bestBackup) {
+        bestBackup = candidate;
+      }
+    }
+
+    // 3. Return best option found
+    // If we found an unseen question (even if wrong difficulty), use it.
+    // Otherwise, fall back to random (repeats allowed if pool is exhausted).
+    return bestBackup || registry.getRandom();
+  };
+
   // --- MOVEMENT ---
   const move = useCallback((dx: number, dy: number) => {
     if (modal.isOpen || grid.length === 0 || !grid[0]) return;
@@ -1088,8 +1117,9 @@ export const MazeGame: React.FC = () => {
 
     // Academic Prompt Trigger (5% chance on empty cells)
     if (targetCell.item === ItemType.Empty && Math.random() < 0.05) {
-      const question = registry.getRandom();
+      const question = getTieredQuestion(level);
       if (question) {
+        setSeenQuestions(prev => [...prev, question.id]);
         setModal({
           isOpen: true,
           type: 'question',
@@ -1109,86 +1139,98 @@ export const MazeGame: React.FC = () => {
   }, [grid, playerPos, modal.isOpen]);
 
   const handleItem = (item: ItemTypeValues, x: number, y: number) => {
-    const newGrid = [...grid];
-    
+    // 1. EXIT LOGIC (Fixed for smoother transition)
     if (item === ItemType.Exit) {
-      // Check if mostly explored (simple check: 80% of valid cells seen)
       const validCells = grid.flat().filter(c => c.valid);
       const seenCount = validCells.filter(c => c.seen).length;
+      
       if (seenCount / validCells.length < 0.8) {
         setModal({
           isOpen: true,
           type: 'alert',
           title: 'Explore More',
-          message: 'The exit is locked! You must explore 80% of the map to unlock it.',
+          message: 'The exit is locked! Explore 80% of the map to unlock.',
           onConfirm: () => setModal(prev => ({ ...prev, isOpen: false }))
         });
         playSound('bump');
         return;
       }
       
-      // Level Complete
-      const titles = ["Future Professor", "Teacher", "Scientist", "Farmer", "Student forever"];
-      const title = titles[Math.floor(Math.random() * titles.length)];
-      
       playSound('cheer');
-      setTimeout(() => playSound('railCrossing'), 1000);
-      setTimeout(() => playSound('churchBell'), 2000);
-
       setModal({
         isOpen: true,
         type: 'levelComplete',
         title: 'Level Complete!',
-        message: `You found the exit! You are a ${title}! Score: ${score}`,
+        message: `Incredible! Level ${level} cleared. Current Score: ${score}`,
         onConfirm: async () => {
+          // Close modal immediately so UI doesn't hang
           setModal(prev => ({ ...prev, isOpen: false }));
-          // NO ads or paywalls during first 2 games
-          // Only show ads/paywall starting from game 3+
+          
+          // Handle Ads if necessary
           if (runCount >= 3 && !isPremium && !adWatched) {
-            crazyGames.gameplayStop();
-            await crazyGames.requestAd('midgame');
-            crazyGames.gameplayStart();
-            checkAndStartLevel(level + 1);
-          } else {
-            checkAndStartLevel(level + 1);
+             try {
+               await crazyGames.requestAd('midgame');
+             } catch (e) {
+               console.log("Ad skipped or failed");
+             }
           }
+          
+          // CRITICAL FIX: Increment the level and start fresh
+          // We use a timeout to ensure the state has cleared the old maze first
+          setTimeout(() => {
+            checkAndStartLevel(level + 1);
+          }, 100);
         }
       });
       return;
     }
 
-    // Hazards
-    if ([ItemType.Hazard, ItemType.Fire, ItemType.Fumes, ItemType.Robber, ItemType.Snake, ItemType.Quicksand, ItemType.Bees, ItemType.Meteor, ItemType.Aliens, ItemType.Bear].includes(item)) {
+    // 2. HAZARD LOGIC (Keep your existing one)
+    if (([ItemType.Hazard, ItemType.Fire, ItemType.Fumes, ItemType.Robber, ItemType.Snake, ItemType.Quicksand, ItemType.Bees, ItemType.Meteor, ItemType.Aliens, ItemType.Bear] as ItemTypeValues[]).includes(item)) {
       playSound('hazard');
       setEncounteredHazards(prev => Array.from(new Set([...prev, item])));
       setModal({
         isOpen: true,
         type: 'inventory',
         title: 'Hazard Encounter!',
-        message: `You encountered: ${ITEMS_CONFIG[item].name}. Choose an item to use:`,
+        message: `Danger: ${ITEMS_CONFIG[item].name}! Use a mitigator:`,
         hazardType: item,
         onConfirm: (selectedItem) => resolveHazard(item, selectedItem, x, y)
       });
       return;
     }
 
-    // Pickups
-    newGrid[y][x].item = ItemType.Empty;
-    setGrid(newGrid);
+    // 3. PICKUP LOGIC (Fixed: No more disappearing items when full!)
+    if (item === ItemType.Score || item === ItemType.Health) {
+      // Instant use - clear the tile
+      const newGrid = [...grid];
+      newGrid[y][x].item = ItemType.Empty;
+      setGrid(newGrid);
 
-    if (item === ItemType.Score) {
-      setScore(s => s + 100);
-      addLog("Found a Gem! +100 Score");
-      playSound('itemCollected');
-      playSound('doorbell');
-    } else if (item === ItemType.Health) {
-      setHp(h => Math.min(100, h + 20));
-      addLog("Used Health Pack. +20 HP");
+      if (item === ItemType.Score) {
+        setScore(s => s + 100);
+        addLog("Found a Gem! +100 Score");
+        playSound('doorbell');
+      } else {
+        setHp(h => Math.min(100, h + 20));
+        addLog("Used Health Pack. +20 HP");
+      }
       playSound('itemCollected');
     } else {
-      setBag(prev => [...prev, item]);
-      addLog(`Picked up ${ITEMS_CONFIG[item].name}`);
-      playSound('itemCollected');
+      // Inventory Items
+      if (bag.length < 16) {
+        const newGrid = [...grid];
+        newGrid[y][x].item = ItemType.Empty; // Only remove from floor if we have room
+        setGrid(newGrid);
+        
+        setBag(prev => [...prev, item]);
+        addLog(`Picked up ${ITEMS_CONFIG[item].name}`);
+        playSound('itemCollected');
+      } else {
+        // BAG IS FULL: Item stays on the map!
+        addLog("Bag is full! Use an item to make room.");
+        playSound('bump');
+      }
     }
   };
 
@@ -1218,7 +1260,13 @@ export const MazeGame: React.FC = () => {
     const encounter = encounters.find(e => e.id === encounterId);
     
     if (encounter) {
-      const remedies = encounter.remedies as Record<string, number>;
+      // Create a mutable copy of remedies to allow code-based overrides
+      const remedies = { ...(encounter.remedies as Record<string, number>) };
+
+      // Dynamic remedies requested
+      if (hazardType === ItemType.Fumes) remedies[ItemType.GasMask] = 0;
+      if (hazardType === ItemType.Aliens) remedies[ItemType.Teamwork] = 0;
+
       const basePoints = encounter.base_points;
       
       if (usedItem && remedies[usedItem] !== undefined) {
@@ -1367,8 +1415,10 @@ export const MazeGame: React.FC = () => {
       let points = difficulty === 'easy' ? 10 : difficulty === 'hard' ? 20 : 40;
       if (question.category === 'Social') points += 10; // Bonus for social behaviors
       
+      const healthGain = 5;
       setScore(s => s + points);
-      addLog(`Correct! +${points} points.`);
+      setHp(h => Math.min(100, h + healthGain));
+      addLog(`Correct! +${points} points & +${healthGain} HP.`);
       playSound('churchBell');
     } else {
       // Wrong (-10 points)
@@ -1695,16 +1745,16 @@ export const MazeGame: React.FC = () => {
                 NERD METER
               </div>
               <div className="grid grid-cols-4 gap-1">
-                {/* Reduced to 12 cells (3 rows) to make room for larger title */}
-                {Array.from({ length: 12 }).map((_, i) => {
+                {/* Expanded to 16 cells (4x4) */}
+                {Array.from({ length: 16 }).map((_, i) => {
                   const item = bag[i];
                   return (
                     <div
                       key={i}
-                      className={`w-[32px] h-[32px] rounded border ${item ? 'bg-slate-700/90 border-slate-600' : 'bg-slate-300/50 border-slate-400/50'} flex items-center justify-center`}
+                      className={`w-[38px] h-[38px] rounded border ${item ? 'bg-slate-700/90 border-slate-600' : 'bg-slate-300/50 border-slate-400/50'} flex items-center justify-center`}
                       title={item ? ITEMS_CONFIG[item]?.name : 'Empty'}
                     >
-                      {item && <span className="text-sm">{ITEMS_CONFIG[item]?.char}</span>}
+                      {item && <span className="text-base">{ITEMS_CONFIG[item]?.char}</span>}
                     </div>
                   );
                 })}
@@ -1897,7 +1947,7 @@ export const MazeGame: React.FC = () => {
               </div>
             ) : (
               /* Dashboard on LEFT when controls are on RIGHT */
-              <div className="bg-lime-200 border border-lime-300 p-2 rounded flex flex-col gap-1 w-[200px] flex-shrink-0">
+              <div className="bg-lime-200 border border-lime-300 p-2 rounded flex flex-col gap-1 w-[280px] flex-shrink-0">
                 <div className="flex gap-1">
                   <button onClick={() => setShowLeaderboard(true)} className="w-[92px] h-[40px] bg-slate-800/90 hover:bg-slate-700 rounded transition-colors border border-slate-600 flex items-center justify-center">
                     <Trophy className="w-5 h-5 text-yellow-400" />
@@ -1918,11 +1968,11 @@ export const MazeGame: React.FC = () => {
                 </div>
                 <div className="text-[10px] font-bold text-slate-800 uppercase text-center leading-none">INVENTORY</div>
                 <div className="grid grid-cols-4 gap-0.5">
-                  {Array.from({ length: 12 }).map((_, i) => {
+                  {Array.from({ length: 16 }).map((_, i) => {
                     const item = bag[i];
                     return (
-                      <div key={i} className={`w-[44px] h-[44px] rounded border ${item ? 'bg-slate-700/90 border-slate-600' : 'bg-slate-300/50 border-slate-400/50'} flex items-center justify-center`} title={item ? ITEMS_CONFIG[item]?.name : 'Empty'}>
-                        {item && <span className="text-lg">{ITEMS_CONFIG[item]?.char}</span>}
+                      <div key={i} className={`w-[60px] h-[60px] rounded border ${item ? 'bg-slate-700/90 border-slate-600' : 'bg-slate-300/50 border-slate-400/50'} flex items-center justify-center`} title={item ? ITEMS_CONFIG[item]?.name : 'Empty'}>
+                        {item && <span className="text-2xl">{ITEMS_CONFIG[item]?.char}</span>}
                       </div>
                     );
                   })}
@@ -2033,7 +2083,7 @@ export const MazeGame: React.FC = () => {
               </div>
             ) : (
               /* Dashboard on RIGHT when controls are on LEFT */
-              <div className="bg-lime-200 border border-lime-300 p-2 rounded flex flex-col gap-1 w-[200px] flex-shrink-0">
+              <div className="bg-lime-200 border border-lime-300 p-2 rounded flex flex-col gap-1 w-[280px] flex-shrink-0">
                 <div className="flex gap-1">
                   <button onClick={() => setShowLeaderboard(true)} className="w-[92px] h-[40px] bg-slate-800/90 hover:bg-slate-700 rounded transition-colors border border-slate-600 flex items-center justify-center">
                     <Trophy className="w-5 h-5 text-yellow-400" />
@@ -2054,11 +2104,11 @@ export const MazeGame: React.FC = () => {
                 </div>
                 <div className="text-[10px] font-bold text-slate-800 uppercase text-center leading-none">INVENTORY</div>
                 <div className="grid grid-cols-4 gap-0.5">
-                  {Array.from({ length: 12 }).map((_, i) => {
+                  {Array.from({ length: 16 }).map((_, i) => {
                     const item = bag[i];
                     return (
-                      <div key={i} className={`w-[44px] h-[44px] rounded border ${item ? 'bg-slate-700/90 border-slate-600' : 'bg-slate-300/50 border-slate-400/50'} flex items-center justify-center`} title={item ? ITEMS_CONFIG[item]?.name : 'Empty'}>
-                        {item && <span className="text-lg">{ITEMS_CONFIG[item]?.char}</span>}
+                      <div key={i} className={`w-[60px] h-[60px] rounded border ${item ? 'bg-slate-700/90 border-slate-600' : 'bg-slate-300/50 border-slate-400/50'} flex items-center justify-center`} title={item ? ITEMS_CONFIG[item]?.name : 'Empty'}>
+                        {item && <span className="text-2xl">{ITEMS_CONFIG[item]?.char}</span>}
                       </div>
                     );
                   })}

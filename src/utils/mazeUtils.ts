@@ -61,6 +61,7 @@ export const ItemType = {
   GameMeat: 'game_meat',
   Syringe: 'syringe',
   PoisonBerries: 'poison_berries',
+  GasMask: 'gas_mask',
 } as const;
 
 export type ItemTypeValues = typeof ItemType[keyof typeof ItemType];
@@ -117,28 +118,39 @@ const isCellInShape = (x: number, y: number, w: number, h: number, shape: string
 
 export const generateMaze = (width: number, height: number, shape: string = 'rectangle', difficulty: 'easy' | 'hard' | 'tough_genius' = 'easy', level: number = 1): { grid: Cell[][], startPos: { x: number, y: number } } => {
   const grid: Cell[][] = [];
+  const visited: boolean[][] = [];
+
+  // 1. Initialize Grid
   for (let y = 0; y < height; y++) {
     const row: Cell[] = [];
+    const visitedRow: boolean[] = [];
     for (let x = 0; x < width; x++) {
+      const isValid = isCellInShape(x, y, width, height, shape);
       row.push({
         x, y,
         walls: 15, // All walls
         item: ItemType.Empty,
         seen: false,
         visible: false,
-        valid: isCellInShape(x, y, width, height, shape)
+        valid: isValid
       });
+      // Mark invalid cells as visited so the generator doesn't try to go there
+      visitedRow.push(!isValid);
     }
     grid.push(row);
+    visited.push(visitedRow);
   }
 
-  // DFS Maze Generation (Start from center to ensure good spread)
+  // 2. Recursive Backtracker (Guarantees perfect connectivity)
   const genStartX = Math.floor(width / 2);
   const genStartY = Math.floor(height / 2);
-  // Stack now tracks incoming direction to bias straight paths
-  const stack: { x: number, y: number, incomingDir?: number }[] = [{ x: genStartX, y: genStartY }];
-  const visited = new Set<string>();
-  visited.add(`${genStartX},${genStartY}`);
+  
+  const stack: { x: number, y: number }[] = [];
+  // Ensure start is valid (it should be for our shapes, but safety first)
+  if (grid[genStartY][genStartX].valid) {
+    visited[genStartY][genStartX] = true;
+    stack.push({ x: genStartX, y: genStartY });
+  }
 
   while (stack.length > 0) {
     const current = stack[stack.length - 1];
@@ -146,26 +158,18 @@ export const generateMaze = (width: number, height: number, shape: string = 'rec
       .map(dir => ({ dir, x: current.x + DX[dir], y: current.y + DY[dir] }))
       .filter(n => 
         n.x >= 0 && n.x < width && n.y >= 0 && n.y < height && 
-        grid[n.y][n.x].valid && 
-        !visited.has(`${n.x},${n.y}`)
+        !visited[n.y][n.x]
       );
 
     if (neighbors.length > 0) {
-      let next;
-      // Bias towards straight path (75% chance) to reduce turns by 25%
-      const straightNeighbor = neighbors.find(n => n.dir === current.incomingDir);
-      if (straightNeighbor && Math.random() < 0.75) {
-        next = straightNeighbor;
-      } else {
-        next = neighbors[Math.floor(Math.random() * neighbors.length)];
-      }
+      const next = neighbors[Math.floor(Math.random() * neighbors.length)];
       
       // Remove walls
       grid[current.y][current.x].walls &= ~next.dir;
       grid[next.y][next.x].walls &= ~OPPOSITE[next.dir];
 
-      visited.add(`${next.x},${next.y}`);
-      stack.push({ x: next.x, y: next.y, incomingDir: next.dir });
+      visited[next.y][next.x] = true;
+      stack.push({ x: next.x, y: next.y });
     } else {
       stack.pop();
     }
@@ -299,7 +303,8 @@ export const generateMaze = (width: number, height: number, shape: string = 'rec
       ItemType.PharmacyPack, ItemType.Sunscreen, ItemType.LifeJacket,
       ItemType.Ventilation, ItemType.Helmet, ItemType.Money,
       ItemType.ReflexBoost, ItemType.Dodge, ItemType.HealthBerries,
-      ItemType.FlowerPollen, ItemType.GameMeat, ItemType.Syringe
+      ItemType.FlowerPollen, ItemType.GameMeat, ItemType.Syringe,
+      ItemType.GasMask
     ];
     cell.item = items[Math.floor(Math.random() * items.length)];
   }

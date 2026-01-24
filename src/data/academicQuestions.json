@@ -149,9 +149,9 @@
     "category": "Science"
   },
   {
-    "id": "sci_gas",
+    "id": "sci_gas_giant",
     "text": "Gas giant?",
-    "options": ["Saturn", "Mars"],
+    "options": ["Saturn", "Mars", "Venus"],
     "answer": "Saturn",
     "type": "choice",
     "category": "Science"
@@ -438,8 +438,8 @@
   },
   {
     "id": "vac_wash",
-    "text": "Handwashing prevents?",
-    "options": ["Disease", "Dirt"],
+    "text": "Handwashing is a key practice for preventing the spread of:",
+    "options": ["Disease", "Sunburn"],
     "answer": "Disease",
     "type": "choice",
     "category": "General"
@@ -685,7 +685,7 @@
     "category": "Science"
   },
   {
-    "id": "sci_gas",
+    "id": "sci_oxygen",
     "text": "We breathe in?",
     "options": ["Oxygen", "Helium"],
     "answer": "Oxygen",
