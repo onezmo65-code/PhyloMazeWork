@@ -1,4 +1,3 @@
- 
 {
   "hosting": {
     "public": "dist",
@@ -7,30 +6,29 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
     "headers": [
       {
-        "source": "/ads.txt",
+        "source": "/@(ads.txt|app-ads.txt)",
         "headers": [
           {
-            "key": "Cache-Control",
-            "value": "public, max-age=3600"
+            "key": "Content-Type",
+            "value": "text/plain"
           }
         ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/ads.txt",
+        "destination": "/ads.txt"
       },
       {
         "source": "/app-ads.txt",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=3600"
-          }
-        ]
+        "destination": "/app-ads.txt"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }
